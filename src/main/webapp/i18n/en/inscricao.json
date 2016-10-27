@@ -1,0 +1,26 @@
+{
+    "jhipsterApp": {
+        "inscricao" : {
+            "home": {
+                "title": "Inscricaos",
+                "createLabel": "Create a new Inscricao",
+                "createOrEditLabel": "Create or edit a Inscricao",
+                "search": "Search for Inscricao"
+            },
+            "created": "A new Inscricao is created with identifier {{ param }}",
+            "updated": "A Inscricao is updated with identifier {{ param }}",
+            "deleted": "A Inscricao is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Inscricao {{ id }}?"
+            },
+            "detail": {
+                "title": "Inscricao"
+            },
+            "periodo": "Periodo",
+            "grau": "Grau",
+            "frequencia": "Frequencia",
+            "aluno": "Aluno",
+            "disciplina": "Disciplina"
+        }
+    }
+}

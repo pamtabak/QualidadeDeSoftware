@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="jhipsterApp.aluno.detail.title">Aluno</span> {{vm.aluno.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jhipsterApp.aluno.nome">Nome</span></dt>
+        <dd>
+            <span>{{vm.aluno.nome}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.aluno.documento">Documento</span></dt>
+        <dd>
+            <span>{{vm.aluno.documento}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.aluno.matricula">Matricula</span></dt>
+        <dd>
+            <span>{{vm.aluno.matricula}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.aluno.periodo">Periodo</span></dt>
+        <dd>
+            <span>{{vm.aluno.periodo | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.aluno.programa">Programa</span></dt>
+        <dd>
+            <a ui-sref="programa-detail({id:vm.aluno.programa.id})">{{vm.aluno.programa.id}}</a>
+        </dd>
+        <dt><span data-translate="jhipsterApp.aluno.professor">Professor</span></dt>
+        <dd>
+            <a ui-sref="professor-detail({id:vm.aluno.professor.id})">{{vm.aluno.professor.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="aluno-detail.edit({id:vm.aluno.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

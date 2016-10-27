@@ -1,0 +1,54 @@
+entity Programa
+{
+	nome String,
+    codigo Integer
+}
+
+entity Usuario
+{
+	login String,
+    senha String
+}
+
+entity Aluno
+{
+	nome String,
+    documento Integer,
+    matricula Integer,
+    periodo ZonedDateTime
+}
+
+entity Professor
+{
+	nome String,
+    documento Integer
+}
+
+entity SecretariaAcademica
+{
+	nome String
+}
+
+entity Disciplina
+{
+	numeroDeVagas Integer, 
+    horario ZonedDateTime,
+    sala String,
+    codigo String
+}
+
+entity Inscricao
+{
+	periodo ZonedDateTime,
+    grau Double,
+    frequencia Integer
+}
+
+relationship OneToMany
+{
+	Programa{programa} to Aluno,
+    Professor{orientador} to Aluno,
+    Professor{professor} to Disciplina,
+    Aluno{aluno} to Inscricao,
+    Disciplina{disciplina} to Inscricao
+}

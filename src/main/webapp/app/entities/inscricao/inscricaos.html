@@ -1,0 +1,68 @@
+<div>
+    <h2 data-translate="jhipsterApp.inscricao.home.title">Inscricaos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="inscricao.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="jhipsterApp.inscricao.home.createLabel">
+                        Create new Inscricao
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="jhipsterApp.inscricao.periodo">Periodo</span></th>
+                    <th><span data-translate="jhipsterApp.inscricao.grau">Grau</span></th>
+                    <th><span data-translate="jhipsterApp.inscricao.frequencia">Frequencia</span></th>
+                    <th><span data-translate="jhipsterApp.inscricao.aluno">Aluno</span></th>
+                    <th><span data-translate="jhipsterApp.inscricao.disciplina">Disciplina</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="inscricao in vm.inscricaos track by inscricao.id">
+                    <td><a ui-sref="inscricao-detail({id:inscricao.id})">{{inscricao.id}}</a></td>
+                    <td>{{inscricao.periodo | date:'medium'}}</td>
+                    <td>{{inscricao.grau}}</td>
+                    <td>{{inscricao.frequencia}}</td>
+                    <td>
+                        <a ui-sref="aluno-detail({id:inscricao.aluno.id})">{{inscricao.aluno.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="disciplina-detail({id:inscricao.disciplina.id})">{{inscricao.disciplina.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="inscricao-detail({id:inscricao.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="inscricao.edit({id:inscricao.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="inscricao.delete({id:inscricao.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

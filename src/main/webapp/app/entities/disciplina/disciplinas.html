@@ -1,0 +1,66 @@
+<div>
+    <h2 data-translate="jhipsterApp.disciplina.home.title">Disciplinas</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="disciplina.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="jhipsterApp.disciplina.home.createLabel">
+                        Create new Disciplina
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="jhipsterApp.disciplina.numeroDeVagas">Numero De Vagas</span></th>
+                    <th><span data-translate="jhipsterApp.disciplina.horario">Horario</span></th>
+                    <th><span data-translate="jhipsterApp.disciplina.sala">Sala</span></th>
+                    <th><span data-translate="jhipsterApp.disciplina.codigo">Codigo</span></th>
+                    <th><span data-translate="jhipsterApp.disciplina.professor">Professor</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="disciplina in vm.disciplinas track by disciplina.id">
+                    <td><a ui-sref="disciplina-detail({id:disciplina.id})">{{disciplina.id}}</a></td>
+                    <td>{{disciplina.numeroDeVagas}}</td>
+                    <td>{{disciplina.horario | date:'medium'}}</td>
+                    <td>{{disciplina.sala}}</td>
+                    <td>{{disciplina.codigo}}</td>
+                    <td>
+                        <a ui-sref="professor-detail({id:disciplina.professor.id})">{{disciplina.professor.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="disciplina-detail({id:disciplina.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="disciplina.edit({id:disciplina.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="disciplina.delete({id:disciplina.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

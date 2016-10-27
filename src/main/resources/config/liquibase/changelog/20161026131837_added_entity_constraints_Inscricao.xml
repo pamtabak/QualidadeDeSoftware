@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Inscricao.
+    -->
+    <changeSet id="20161026131837-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="aluno_id"
+                                 baseTableName="inscricao"
+                                 constraintName="fk_inscricao_aluno_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="aluno"/>
+
+        <addForeignKeyConstraint baseColumnNames="disciplina_id"
+                                 baseTableName="inscricao"
+                                 constraintName="fk_inscricao_disciplina_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="disciplina"/>
+
+    </changeSet>
+</databaseChangeLog>

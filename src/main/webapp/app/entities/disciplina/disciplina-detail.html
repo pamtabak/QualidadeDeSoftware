@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="jhipsterApp.disciplina.detail.title">Disciplina</span> {{vm.disciplina.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jhipsterApp.disciplina.numeroDeVagas">Numero De Vagas</span></dt>
+        <dd>
+            <span>{{vm.disciplina.numeroDeVagas}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.disciplina.horario">Horario</span></dt>
+        <dd>
+            <span>{{vm.disciplina.horario | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.disciplina.sala">Sala</span></dt>
+        <dd>
+            <span>{{vm.disciplina.sala}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.disciplina.codigo">Codigo</span></dt>
+        <dd>
+            <span>{{vm.disciplina.codigo}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.disciplina.professor">Professor</span></dt>
+        <dd>
+            <a ui-sref="professor-detail({id:vm.disciplina.professor.id})">{{vm.disciplina.professor.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="disciplina-detail.edit({id:vm.disciplina.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

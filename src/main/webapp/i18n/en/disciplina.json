@@ -1,0 +1,27 @@
+{
+    "jhipsterApp": {
+        "disciplina" : {
+            "home": {
+                "title": "Disciplinas",
+                "createLabel": "Create a new Disciplina",
+                "createOrEditLabel": "Create or edit a Disciplina",
+                "search": "Search for Disciplina"
+            },
+            "created": "A new Disciplina is created with identifier {{ param }}",
+            "updated": "A Disciplina is updated with identifier {{ param }}",
+            "deleted": "A Disciplina is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Disciplina {{ id }}?"
+            },
+            "detail": {
+                "title": "Disciplina"
+            },
+            "numeroDeVagas": "Numero De Vagas",
+            "horario": "Horario",
+            "sala": "Sala",
+            "codigo": "Codigo",
+            "professor": "Professor",
+            "disciplina": "Disciplina"
+        }
+    }
+}
