@@ -10,6 +10,9 @@ import java.util.List;
  * Spring Data JPA repository for the Usuario entity.
  */
 @SuppressWarnings("unused")
-public interface UsuarioRepository extends JpaRepository<Usuario,Long> {
+public interface UsuarioRepository extends JpaRepository<Usuario,Long> 
+{
+	List<Usuario> findAll();
 
+	//Optional<Usuario> findOneById(Long userId);
 }

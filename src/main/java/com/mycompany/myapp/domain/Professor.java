@@ -16,6 +16,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "professor")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+@PrimaryKeyJoinColumn(name="id")
 public class Professor extends Usuario {
 
     @Column(name = "nome")
@@ -33,6 +34,15 @@ public class Professor extends Usuario {
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Disciplina> professors = new HashSet<>();
+
+    public Professor(){}
+
+    public Professor(String login, String senha, String nome, Integer documento)
+    {
+        super(login, senha);
+        this.nome      = nome;
+        this.documento = documento;
+    }
 
     public String getNome() {
         return nome;

@@ -16,6 +16,8 @@
             "detail": {
                 "title": "Professor"
             },
+            "login":"Login",
+            "senha": "Senha",
             "nome": "Nome",
             "documento": "Documento",
             "orientador": "Orientador",

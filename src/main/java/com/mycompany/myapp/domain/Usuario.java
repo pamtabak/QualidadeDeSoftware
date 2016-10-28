@@ -8,17 +8,19 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * A Usuario.
+ * Usuario.
  */
 @Entity
 @Table(name = "usuario")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class Usuario implements Serializable {
-
+@Inheritance(strategy=InheritanceType.JOINED)
+public class Usuario implements Serializable 
+{
     protected static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column (name = "id")
     protected Long id;
 
     @Column(name = "login")
@@ -27,62 +29,84 @@ public class Usuario implements Serializable {
     @Column(name = "senha")
     protected String senha;
 
-    public Long getId() {
+    public Usuario(){}
+
+    public Usuario(String login, String senha)
+    {
+        this.login = login;
+        this.senha = senha;
+    }
+
+    public Long getId() 
+    {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Long id) 
+    {
         this.id = id;
     }
 
-    public String getLogin() {
+    public String getLogin() 
+    {
         return login;
     }
 
-    public Usuario login(String login) {
+    public Usuario login(String login) 
+    {
         this.login = login;
         return this;
     }
 
-    public void setLogin(String login) {
+    public void setLogin(String login) 
+    {
         this.login = login;
     }
 
-    public String getSenha() {
+    public String getSenha() 
+    {
         return senha;
     }
 
-    public Usuario senha(String senha) {
+    public Usuario senha(String senha) 
+    {
         this.senha = senha;
         return this;
     }
 
-    public void setSenha(String senha) {
+    public void setSenha(String senha) 
+    {
         this.senha = senha;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(Object o) 
+    {
+        if (this == o) 
+        {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (o == null || getClass() != o.getClass()) 
+        {
             return false;
         }
         Usuario usuario = (Usuario) o;
-        if(usuario.id == null || id == null) {
+        if(usuario.id == null || id == null) 
+        {
             return false;
         }
         return Objects.equals(id, usuario.id);
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode() 
+    {
         return Objects.hashCode(id);
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return "Usuario{" +
             "id=" + id +
             ", login='" + login + "'" +

@@ -17,7 +17,9 @@ import java.util.Objects;
 @Entity
 @Table(name = "aluno")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class Aluno extends Usuario {
+@PrimaryKeyJoinColumn(name="id")
+public class Aluno extends Usuario 
+{
 
     @Column(name = "nome")
     private String nome;
@@ -41,6 +43,14 @@ public class Aluno extends Usuario {
 
     @ManyToOne
     private Professor professor;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
