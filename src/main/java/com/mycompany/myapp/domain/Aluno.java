@@ -44,12 +44,17 @@ public class Aluno extends Usuario
     @ManyToOne
     private Professor professor;
 
-    public Long getId() {
-        return id;
-    }
+    public Aluno() {}
 
-    public void setId(Long id) {
-        this.id = id;
+    public Aluno(String login, String senha, String nome, Integer documento, Integer matricula, ZonedDateTime periodo, Programa programa, Professor professor)
+    {
+        super(login, senha);
+        this.nome      = nome;
+        this.documento = documento;
+        this.matricula = matricula;
+        this.periodo   = periodo;
+        this.programa  = programa;
+        this.professor = professor; 
     }
 
     public String getNome() {

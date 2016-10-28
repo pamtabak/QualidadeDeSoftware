@@ -35,6 +35,14 @@ public class SecretariaAcademica extends Usuario
         this.nome = nome;
     }
 
+    public SecretariaAcademica() {}
+
+    public SecretariaAcademica(String login, String senha, String nome)
+    {
+        super(login, senha);
+        this.nome = nome;
+    }
+
     @Override
     public boolean equals(Object o) 
     {
