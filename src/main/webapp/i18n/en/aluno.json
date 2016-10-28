@@ -16,6 +16,8 @@
             "detail": {
                 "title": "Aluno"
             },
+            "login": "Login",
+            "senha": "Senha",
             "nome": "Nome",
             "documento": "Documento",
             "matricula": "Matricula",
