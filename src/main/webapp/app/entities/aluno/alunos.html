@@ -20,7 +20,6 @@
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
                     <th><span data-translate="jhipsterApp.aluno.login">Login</span></th>
-                    <th><span data-translate="jhipsterApp.aluno.senha">Senha</span></th>
                     <th><span data-translate="jhipsterApp.aluno.nome">Nome</span></th>
                     <th><span data-translate="jhipsterApp.aluno.documento">Documento</span></th>
                     <th><span data-translate="jhipsterApp.aluno.matricula">Matricula</span></th>
@@ -34,7 +33,6 @@
                 <tr ng-repeat="aluno in vm.alunos track by aluno.id">
                     <td><a ui-sref="aluno-detail({id:aluno.id})">{{aluno.id}}</a></td>
                     <td>{{aluno.login}}</td>
-                    <td>{{aluno.senha}}</td>
                     <td>{{aluno.nome}}</td>
                     <td>{{aluno.documento}}</td>
                     <td>{{aluno.matricula}}</td>
