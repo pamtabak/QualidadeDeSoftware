@@ -20,7 +20,6 @@
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
                     <th><span data-translate="jhipsterApp.professor.login">Login</span></th>
-                    <th><span data-translate="jhipsterApp.professor.senha">Senha</span></th>
                     <th><span data-translate="jhipsterApp.professor.nome">Nome</span></th>
                     <th><span data-translate="jhipsterApp.professor.documento">Documento</span></th>
                     <th></th>
@@ -30,7 +29,6 @@
                 <tr ng-repeat="professor in vm.professors track by professor.id">
                     <td><a ui-sref="professor-detail({id:professor.id})">{{professor.id}}</a></td>
                     <td>{{professor.login}}</td>
-                    <td>{{professor.senha}}</td>
                     <td>{{professor.nome}}</td>
                     <td>{{professor.documento}}</td>
                     <td class="text-right">
