@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "professor",
+            "otherEntityName": "professor",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "disciplina",
+            "otherEntityName": "inscricao",
+            "otherEntityRelationshipName": "disciplina"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "numeroDeVagas",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "horario",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "sala",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codigo",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161109134408",
+    "entityTableName": "disciplina",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

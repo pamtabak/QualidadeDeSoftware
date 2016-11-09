@@ -1,0 +1,26 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "programa",
+            "otherEntityName": "aluno",
+            "otherEntityRelationshipName": "programa"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codigo",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20161109134403",
+    "entityTableName": "programa",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

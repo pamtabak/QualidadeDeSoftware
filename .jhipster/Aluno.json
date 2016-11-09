@@ -1,0 +1,46 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "programa",
+            "otherEntityName": "programa",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "aluno",
+            "otherEntityName": "inscricao",
+            "otherEntityRelationshipName": "aluno"
+        },
+        {
+            "relationshipName": "professor",
+            "otherEntityName": "professor",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "documento",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "matricula",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "periodo",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20161109134405",
+    "entityTableName": "aluno",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "aluno",
+            "otherEntityName": "aluno",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "disciplina",
+            "otherEntityName": "disciplina",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "periodo",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "grau",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "frequencia",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20161109134409",
+    "entityTableName": "inscricao",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

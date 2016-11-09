@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "orientador",
+            "otherEntityName": "aluno",
+            "otherEntityRelationshipName": "professor"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "professor",
+            "otherEntityName": "disciplina",
+            "otherEntityRelationshipName": "professor"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "documento",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20161109134406",
+    "entityTableName": "professor",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}
