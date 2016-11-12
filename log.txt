@@ -1,0 +1,5 @@
+12/11/2016 18:47:24 Usuario{id=null, login='momo', senha='momo'} criado
+12/11/2016 18:52:38 Usuario{id=null, login='momo', senha='momo'} criado
+12/11/2016 18:57:21 Usuario{id=null, login='eric', senha='eric'} criado
+12/11/2016 18:57:43 Usuario{id=10, login='ericmo', senha='eric'} atualizado
+12/11/2016 19:01:53 Usuario{id=10, login='ericmo', senha='eric'} deletado

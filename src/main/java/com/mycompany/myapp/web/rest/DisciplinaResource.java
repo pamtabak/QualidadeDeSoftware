@@ -31,6 +31,8 @@ public class DisciplinaResource {
     @Inject
     private DisciplinaRepository disciplinaRepository;
 
+    private WriteToLog writeToLog = new WriteToLog();
+    
     /**
      * POST  /disciplinas : Create a new disciplina.
      *
@@ -47,6 +49,7 @@ public class DisciplinaResource {
         if (disciplina.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("disciplina", "idexists", "A new disciplina cannot already have an ID")).body(null);
         }
+        writeToLog.writeMessage(disciplina.toString() + " criada");
         Disciplina result = disciplinaRepository.save(disciplina);
         return ResponseEntity.created(new URI("/api/disciplinas/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("disciplina", result.getId().toString()))
@@ -71,6 +74,7 @@ public class DisciplinaResource {
         if (disciplina.getId() == null) {
             return createDisciplina(disciplina);
         }
+        writeToLog.writeMessage(disciplina.toString() + " atualizada");
         Disciplina result = disciplinaRepository.save(disciplina);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("disciplina", disciplina.getId().toString()))
@@ -124,6 +128,10 @@ public class DisciplinaResource {
     @Timed
     public ResponseEntity<Void> deleteDisciplina(@PathVariable Long id) {
         log.debug("REST request to delete Disciplina : {}", id);
+        Optional disciplinaOptional = disciplinaRepository.findOneById(id);
+        if (disciplinaOptional.isPresent()) {
+            writeToLog.writeMessage(disciplinaOptional.get().toString() + " deletada");
+        }
         disciplinaRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("disciplina", id.toString())).build();
     }

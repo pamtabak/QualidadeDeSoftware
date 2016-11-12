@@ -31,6 +31,8 @@ public class SecretariaAcademicaResource {
     @Inject
     private SecretariaAcademicaRepository secretariaAcademicaRepository;
 
+    private WriteToLog writeToLog = new WriteToLog();
+
     /**
      * POST  /secretaria-academicas : Create a new secretariaAcademica.
      *
@@ -47,6 +49,7 @@ public class SecretariaAcademicaResource {
         if (secretariaAcademica.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("secretariaAcademica", "idexists", "A new secretariaAcademica cannot already have an ID")).body(null);
         }
+        writeToLog.writeMessage(secretariaAcademica.toString() + " criado");
         SecretariaAcademica result = secretariaAcademicaRepository.save(secretariaAcademica);
         return ResponseEntity.created(new URI("/api/secretaria-academicas/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("secretariaAcademica", result.getId().toString()))
@@ -71,6 +74,7 @@ public class SecretariaAcademicaResource {
         if (secretariaAcademica.getId() == null) {
             return createSecretariaAcademica(secretariaAcademica);
         }
+        writeToLog.writeMessage(secretariaAcademica.toString() + " atualizado");
         SecretariaAcademica result = secretariaAcademicaRepository.save(secretariaAcademica);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("secretariaAcademica", secretariaAcademica.getId().toString()))
@@ -124,6 +128,10 @@ public class SecretariaAcademicaResource {
     @Timed
     public ResponseEntity<Void> deleteSecretariaAcademica(@PathVariable Long id) {
         log.debug("REST request to delete SecretariaAcademica : {}", id);
+        Optional secretariaAcademicaOptional = secretariaAcademicaRepository.findOneById(id);
+        if (secretariaAcademicaOptional.isPresent()) {
+            writeToLog.writeMessage(secretariaAcademicaOptional.get().toString() + " deletado");
+        }
         secretariaAcademicaRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("secretariaAcademica", id.toString())).build();
     }

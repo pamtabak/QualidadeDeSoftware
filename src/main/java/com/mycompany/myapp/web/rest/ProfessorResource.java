@@ -31,6 +31,8 @@ public class ProfessorResource {
     @Inject
     private ProfessorRepository professorRepository;
 
+    private WriteToLog writeToLog = new WriteToLog();
+
     /**
      * POST  /professors : Create a new professor.
      *
@@ -47,6 +49,7 @@ public class ProfessorResource {
         if (professor.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("professor", "idexists", "A new professor cannot already have an ID")).body(null);
         }
+        writeToLog.writeMessage(professor.toString() + " criado");
         Professor result = professorRepository.save(professor);
         return ResponseEntity.created(new URI("/api/professors/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("professor", result.getId().toString()))
@@ -71,6 +74,7 @@ public class ProfessorResource {
         if (professor.getId() == null) {
             return createProfessor(professor);
         }
+        writeToLog.writeMessage(professor.toString() + " atualizado");
         Professor result = professorRepository.save(professor);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("professor", professor.getId().toString()))
@@ -124,6 +128,10 @@ public class ProfessorResource {
     @Timed
     public ResponseEntity<Void> deleteProfessor(@PathVariable Long id) {
         log.debug("REST request to delete Professor : {}", id);
+        Optional professorOptional = professorRepository.findOneById(id);
+        if (professorOptional.isPresent()) {
+            writeToLog.writeMessage(professorOptional.get().toString() + " deletado");
+        }
         professorRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("professor", id.toString())).build();
     }

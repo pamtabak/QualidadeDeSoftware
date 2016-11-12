@@ -31,6 +31,8 @@ public class AlunoResource {
     @Inject
     private AlunoRepository alunoRepository;
 
+    private WriteToLog writeToLog = new WriteToLog();
+    
     /**
      * POST  /alunos : Create a new aluno.
      *
@@ -47,6 +49,7 @@ public class AlunoResource {
         if (aluno.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("aluno", "idexists", "A new aluno cannot already have an ID")).body(null);
         }
+        writeToLog.writeMessage(aluno.toString() + " criado");
         Aluno result = alunoRepository.save(aluno);
         return ResponseEntity.created(new URI("/api/alunos/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("aluno", result.getId().toString()))
@@ -71,6 +74,7 @@ public class AlunoResource {
         if (aluno.getId() == null) {
             return createAluno(aluno);
         }
+        writeToLog.writeMessage(aluno.toString() + " atualizado");
         Aluno result = alunoRepository.save(aluno);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("aluno", aluno.getId().toString()))
@@ -124,6 +128,10 @@ public class AlunoResource {
     @Timed
     public ResponseEntity<Void> deleteAluno(@PathVariable Long id) {
         log.debug("REST request to delete Aluno : {}", id);
+        Optional alunoOptional = alunoRepository.findOneById(id);
+        if (alunoOptional.isPresent()) {
+            writeToLog.writeMessage(alunoOptional.get().toString() + " deletado");
+        }
         alunoRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("aluno", id.toString())).build();
     }

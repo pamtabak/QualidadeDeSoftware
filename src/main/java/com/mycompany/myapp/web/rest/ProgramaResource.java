@@ -31,6 +31,8 @@ public class ProgramaResource {
     @Inject
     private ProgramaRepository programaRepository;
 
+    private WriteToLog writeToLog = new WriteToLog();
+
     /**
      * POST  /programas : Create a new programa.
      *
@@ -47,6 +49,7 @@ public class ProgramaResource {
         if (programa.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("programa", "idexists", "A new programa cannot already have an ID")).body(null);
         }
+        writeToLog.writeMessage(programa.toString() + " criado");
         Programa result = programaRepository.save(programa);
         return ResponseEntity.created(new URI("/api/programas/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("programa", result.getId().toString()))
@@ -71,6 +74,7 @@ public class ProgramaResource {
         if (programa.getId() == null) {
             return createPrograma(programa);
         }
+        writeToLog.writeMessage(programa.toString() + " atualizado");
         Programa result = programaRepository.save(programa);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("programa", programa.getId().toString()))
@@ -124,6 +128,10 @@ public class ProgramaResource {
     @Timed
     public ResponseEntity<Void> deletePrograma(@PathVariable Long id) {
         log.debug("REST request to delete Programa : {}", id);
+        Optional programaOptional = programaRepository.findOneById(id);
+        if (programaOptional.isPresent()) {
+            writeToLog.writeMessage(programaOptional.get().toString() + " deletado");
+        }
         programaRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("programa", id.toString())).build();
     }

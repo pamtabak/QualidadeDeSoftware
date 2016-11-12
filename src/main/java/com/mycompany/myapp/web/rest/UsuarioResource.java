@@ -31,6 +31,8 @@ public class UsuarioResource {
     @Inject
     private UsuarioRepository usuarioRepository;
 
+    private WriteToLog writeToLog = new WriteToLog();
+
     /**
      * POST  /usuarios : Create a new usuario.
      *
@@ -47,6 +49,9 @@ public class UsuarioResource {
         if (usuario.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("usuario", "idexists", "A new usuario cannot already have an ID")).body(null);
         }
+
+        writeToLog.writeMessage(usuario.toString() + " criado");
+
         Usuario result = usuarioRepository.save(usuario);
         return ResponseEntity.created(new URI("/api/usuarios/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("usuario", result.getId().toString()))
@@ -71,6 +76,7 @@ public class UsuarioResource {
         if (usuario.getId() == null) {
             return createUsuario(usuario);
         }
+        writeToLog.writeMessage(usuario.toString() + " atualizado");
         Usuario result = usuarioRepository.save(usuario);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("usuario", usuario.getId().toString()))
@@ -124,8 +130,12 @@ public class UsuarioResource {
     @Timed
     public ResponseEntity<Void> deleteUsuario(@PathVariable Long id) {
         log.debug("REST request to delete Usuario : {}", id);
+        Optional usuarioOptional = usuarioRepository.findOneById(id);
+        System.out.println(usuarioOptional);
+        if (usuarioOptional.isPresent()) {
+            writeToLog.writeMessage(usuarioOptional.get().toString() + " deletado");
+        }
         usuarioRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("usuario", id.toString())).build();
     }
-
 }

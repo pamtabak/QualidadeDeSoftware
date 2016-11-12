@@ -31,6 +31,8 @@ public class InscricaoResource {
     @Inject
     private InscricaoRepository inscricaoRepository;
 
+    private WriteToLog writeToLog = new WriteToLog();
+
     /**
      * POST  /inscricaos : Create a new inscricao.
      *
@@ -47,6 +49,7 @@ public class InscricaoResource {
         if (inscricao.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("inscricao", "idexists", "A new inscricao cannot already have an ID")).body(null);
         }
+        writeToLog.writeMessage(inscricao.toString() + " criada");
         Inscricao result = inscricaoRepository.save(inscricao);
         return ResponseEntity.created(new URI("/api/inscricaos/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("inscricao", result.getId().toString()))
@@ -71,6 +74,7 @@ public class InscricaoResource {
         if (inscricao.getId() == null) {
             return createInscricao(inscricao);
         }
+        writeToLog.writeMessage(inscricao.toString() + " atualizada");
         Inscricao result = inscricaoRepository.save(inscricao);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("inscricao", inscricao.getId().toString()))
@@ -124,6 +128,10 @@ public class InscricaoResource {
     @Timed
     public ResponseEntity<Void> deleteInscricao(@PathVariable Long id) {
         log.debug("REST request to delete Inscricao : {}", id);
+        Optional inscricaoOptional = inscricaoRepository.findOneById(id);
+        if (inscricaoOptional.isPresent()) {
+            writeToLog.writeMessage(inscricaoOptional.get().toString() + " deletada");
+        }
         inscricaoRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("inscricao", id.toString())).build();
     }
