@@ -131,7 +131,6 @@ public class UsuarioResource {
     public ResponseEntity<Void> deleteUsuario(@PathVariable Long id) {
         log.debug("REST request to delete Usuario : {}", id);
         Optional usuarioOptional = usuarioRepository.findOneById(id);
-        System.out.println(usuarioOptional);
         if (usuarioOptional.isPresent()) {
             writeToLog.writeMessage(usuarioOptional.get().toString() + " deletado");
         }
