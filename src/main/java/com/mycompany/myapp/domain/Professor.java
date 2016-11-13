@@ -146,6 +146,7 @@ public class Professor extends Usuario {
             "id=" + id +
             ", nome='" + nome + "'" +
             ", documento='" + documento + "'" +
+            ", login='" + login + "'" +
             '}';
     }
 }

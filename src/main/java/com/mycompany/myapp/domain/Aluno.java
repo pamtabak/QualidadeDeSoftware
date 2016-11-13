@@ -188,6 +188,7 @@ public class Aluno extends Usuario
             ", documento='" + documento + "'" +
             ", matricula='" + matricula + "'" +
             ", periodo='" + periodo + "'" +
+            ", login='" + login + "'" +
             '}';
     }
 }

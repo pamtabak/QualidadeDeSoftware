@@ -72,8 +72,9 @@ public class SecretariaAcademica extends Usuario
     public String toString() 
     {
         return "SecretariaAcademica{" +
-            "id=" + id +
-            ", nome='" + nome + "'" +
+            "id=" + id  +
+            ", nome='"  + nome + "'" +
+            ", login='" + login + "'" +
             '}';
     }
 }

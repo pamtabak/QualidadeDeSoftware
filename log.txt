@@ -3,3 +3,4 @@
 12/11/2016 18:57:21 Usuario{id=null, login='eric', senha='eric'} criado
 12/11/2016 18:57:43 Usuario{id=10, login='ericmo', senha='eric'} atualizado
 12/11/2016 19:01:53 Usuario{id=10, login='ericmo', senha='eric'} deletado
+13/11/2016 15:05:42 SecretariaAcademica{id=null, nome='Secretaria', login='secretaria'} criado
