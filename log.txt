@@ -4,3 +4,11 @@
 12/11/2016 18:57:43 Usuario{id=10, login='ericmo', senha='eric'} atualizado
 12/11/2016 19:01:53 Usuario{id=10, login='ericmo', senha='eric'} deletado
 13/11/2016 15:05:42 SecretariaAcademica{id=null, nome='Secretaria', login='secretaria'} criado
+13/11/2016 15:23:13 Disciplina{id=null, numeroDeVagas='25', horario='2016-11-10T02:00Z[UTC]', sala='206', codigo='2010109', nome='qualidade de software'} criada
+13/11/2016 15:32:13 Disciplina{id=null, numeroDeVagas='30', horario='2016-11-30T02:00Z[UTC]', sala='H304', codigo='COC201'} criada
+13/11/2016 15:32:52 Disciplina{id=1, numeroDeVagas='25', horario='2016-10-27T00:00-02:00[America/Sao_Paulo]', sala='206', codigo='21'} deletada
+13/11/2016 15:32:54 Disciplina{id=2, numeroDeVagas='30', horario='2016-11-30T00:00-02:00[America/Sao_Paulo]', sala='H304', codigo='COC201'} deletada
+13/11/2016 15:34:30 Disciplina{id=null, numeroDeVagas='201', horario='2016-11-18T02:00Z[UTC]', sala='201', codigo='1012'} criada
+13/11/2016 15:36:53 Disciplina{id=null, numeroDeVagas='2', horario='2016-12-03T02:00Z[UTC]', sala='21', codigo='21'} criada
+13/11/2016 15:39:55 Disciplina{id=null, numeroDeVagas='21', horario='2016-11-10T02:00Z[UTC]', sala='21', codigo='21'} criada
+13/11/2016 15:49:12 Disciplina{id=null, numeroDeVagas='25', horario='2016-11-18T02:00Z[UTC]', sala='304', codigo='200'} criada

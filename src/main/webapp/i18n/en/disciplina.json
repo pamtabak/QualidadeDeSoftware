@@ -20,6 +20,7 @@
             "horario": "Horario",
             "sala": "Sala",
             "codigo": "Codigo",
+            "nome":"Nome",
             "professor": "Professor",
             "disciplina": "Disciplina"
         }
