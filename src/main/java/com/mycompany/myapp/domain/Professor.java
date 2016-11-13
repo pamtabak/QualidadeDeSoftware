@@ -23,7 +23,7 @@ public class Professor extends Usuario {
     private String nome;
 
     @Column(name = "documento")
-    private Integer documento;
+    private String documento;
 
     @OneToMany(mappedBy = "professor")
     @JsonIgnore
@@ -37,7 +37,7 @@ public class Professor extends Usuario {
 
     public Professor(){}
 
-    public Professor(String login, String senha, String nome, Integer documento)
+    public Professor(String login, String senha, String nome, String documento)
     {
         super(login, senha);
         this.nome      = nome;
@@ -57,16 +57,16 @@ public class Professor extends Usuario {
         this.nome = nome;
     }
 
-    public Integer getDocumento() {
+    public String getDocumento() {
         return documento;
     }
 
-    public Professor documento(Integer documento) {
+    public Professor documento(String documento) {
         this.documento = documento;
         return this;
     }
 
-    public void setDocumento(Integer documento) {
+    public void setDocumento(String documento) {
         this.documento = documento;
     }
 

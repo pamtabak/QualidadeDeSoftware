@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="pamelatabak (generated)" id="1479061931915-1">
+      <dropColumn columnName="documento" schemaName="public" tableName="professor"/>
+    </changeSet>
+    <changeSet author="pamelatabak (generated)" id="1479061931915-2">
+      <addColumn tableName="professor">
+         <column name="documento" type="varchar(255)"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="pamelatabak (generated)" id="1479061931915-3">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="created_date"
+                        tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="pamelatabak (generated)" id="1479061931915-4">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="horario"
+                        tableName="disciplina"/>
+   </changeSet>
+   <changeSet author="pamelatabak (generated)" id="1479061931915-5">
+      <dropDefaultValue columnDataType="timestamp" columnName="periodo" tableName="aluno"/>
+   </changeSet>
+   <changeSet author="pamelatabak (generated)" id="1479061931915-6">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="periodo"
+                        tableName="inscricao"/>
+   </changeSet>
+   <changeSet author="pamelatabak (generated)" id="1479061931915-7">
+      <dropColumn columnName="documento" schemaName="public" tableName="aluno"/>
+    </changeSet>
+    <changeSet author="pamelatabak (generated)" id="1479061931915-8">
+      <dropColumn columnName="matricula" schemaName="public" tableName="aluno"/>
+    </changeSet>
+    <changeSet author="pamelatabak (generated)" id="1479061931915-9">
+      <addColumn tableName="aluno">
+         <column name="documento" type="varchar(255)"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="pamelatabak (generated)" id="1479061931915-10">
+      <addColumn tableName="aluno">
+         <column name="matricula" type="varchar(255)"/>
+      </addColumn>
+   </changeSet>
+</databaseChangeLog>

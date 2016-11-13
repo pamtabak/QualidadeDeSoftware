@@ -12,3 +12,8 @@
 13/11/2016 15:36:53 Disciplina{id=null, numeroDeVagas='2', horario='2016-12-03T02:00Z[UTC]', sala='21', codigo='21'} criada
 13/11/2016 15:39:55 Disciplina{id=null, numeroDeVagas='21', horario='2016-11-10T02:00Z[UTC]', sala='21', codigo='21'} criada
 13/11/2016 15:49:12 Disciplina{id=null, numeroDeVagas='25', horario='2016-11-18T02:00Z[UTC]', sala='304', codigo='200'} criada
+13/11/2016 15:59:12 Disciplina{id=null, numeroDeVagas='1', horario='2016-11-10T02:00Z[UTC]', sala='1', codigo='1'} criada
+13/11/2016 16:20:41 Professor{id=null, nome='Toacy', documento='12345678911', login='toacy'} criado
+13/11/2016 16:29:25 Professor{id=null, nome='toacy', documento='12345678911', login='toacy'} criado
+13/11/2016 16:38:54 Professor{id=null, nome='toacy', documento='12345678911', login='toacy'} criado
+13/11/2016 16:46:22 Aluno{id=null, nome='Pedro', documento='123456789-11', matricula='113034881', periodo='2016-11-10T02:00Z[UTC]', login='pedro'} criado

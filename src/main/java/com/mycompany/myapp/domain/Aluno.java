@@ -25,10 +25,10 @@ public class Aluno extends Usuario
     private String nome;
 
     @Column(name = "documento")
-    private Integer documento;
+    private String documento;
 
     @Column(name = "matricula")
-    private Integer matricula;
+    private String matricula;
 
     @Column(name = "periodo")
     private ZonedDateTime periodo;
@@ -46,7 +46,7 @@ public class Aluno extends Usuario
 
     public Aluno() {}
 
-    public Aluno(String login, String senha, String nome, Integer documento, Integer matricula, ZonedDateTime periodo, Programa programa, Professor professor)
+    public Aluno(String login, String senha, String nome, String documento, String matricula, ZonedDateTime periodo, Programa programa, Professor professor)
     {
         super(login, senha);
         this.nome      = nome;
@@ -70,29 +70,29 @@ public class Aluno extends Usuario
         this.nome = nome;
     }
 
-    public Integer getDocumento() {
+    public String getDocumento() {
         return documento;
     }
 
-    public Aluno documento(Integer documento) {
+    public Aluno documento(String documento) {
         this.documento = documento;
         return this;
     }
 
-    public void setDocumento(Integer documento) {
+    public void setDocumento(String documento) {
         this.documento = documento;
     }
 
-    public Integer getMatricula() {
+    public String getMatricula() {
         return matricula;
     }
 
-    public Aluno matricula(Integer matricula) {
+    public Aluno matricula(String matricula) {
         this.matricula = matricula;
         return this;
     }
 
-    public void setMatricula(Integer matricula) {
+    public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
 
