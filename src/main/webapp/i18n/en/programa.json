@@ -3,15 +3,15 @@
         "programa" : {
             "home": {
                 "title": "Programas",
-                "createLabel": "Create a new Programa",
-                "createOrEditLabel": "Create or edit a Programa",
-                "search": "Search for Programa"
+                "createLabel": "Criar um novo programa",
+                "createOrEditLabel": "Criar ou editar um programa",
+                "search": "Procurar programa"
             },
-            "created": "A new Programa is created with identifier {{ param }}",
-            "updated": "A Programa is updated with identifier {{ param }}",
-            "deleted": "A Programa is deleted with identifier {{ param }}",
+            "created": "Um novo programa com o identificador {{ param }} foi criado",
+            "updated": "O Programa {{ nome }} foi atualizado",
+            "deleted": "O Programa {{ nome }} foi deletado",
             "delete": {
-                "question": "Are you sure you want to delete Programa {{ id }}?"
+                "question": "Tem certeza que deseja deletar o Programa: {{ nome }}?"
             },
             "detail": {
                 "title": "Programa"

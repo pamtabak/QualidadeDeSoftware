@@ -9,3 +9,4 @@
 13/11/2016 16:10:11 Usuario{id=null, login='vinicius', senha='123'} criado
 13/11/2016 16:10:26 Usuario{id=2, login='vinicius', senha='123'} deletado
 13/11/2016 16:14:49 Usuario{id=null, login='vinicius', senha='123'} criado
+13/11/2016 16:35:36 Programa{id=null, nome='Engenharia de Sistemas e Computação', codigo='6'} criado

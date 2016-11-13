@@ -11,7 +11,7 @@
             "updated": "Usuário {{ login }} foi atualizado",
             "deleted": "Usuário {{ login }} foi deletado",
             "delete": {
-                "question": "Você tem certeza que deseja deletar o usuário {{ login }}?"
+                "question": "Você tem certeza que deseja deletar o Usuário: {{ login }}?"
             },
             "detail": {
                 "title": "Usuário"
