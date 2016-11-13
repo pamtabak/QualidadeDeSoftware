@@ -3,15 +3,15 @@
         "aluno" : {
             "home": {
                 "title": "Alunos",
-                "createLabel": "Create a new Aluno",
-                "createOrEditLabel": "Create or edit a Aluno",
-                "search": "Search for Aluno"
+                "createLabel": "Criar novo Aluno",
+                "createOrEditLabel": "Criar ou editar Aluno",
+                "search": "Procurar Aluno"
             },
-            "created": "A new Aluno is created with identifier {{ param }}",
-            "updated": "A Aluno is updated with identifier {{ param }}",
-            "deleted": "A Aluno is deleted with identifier {{ param }}",
+            "created": "O Aluno: {{ nome }} foi criado",
+            "updated": "O Aluno: {{ nome }} foi atualizado",
+            "deleted": "O Aluno: {{ nome }} foi deletado",
             "delete": {
-                "question": "Are you sure you want to delete Aluno {{ id }}?"
+                "question": "Tem certeza de que deseja deletar o Aluno: {{ nome }}?"
             },
             "detail": {
                 "title": "Aluno"

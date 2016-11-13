@@ -38,10 +38,10 @@
                     <td>{{aluno.matricula}}</td>
                     <td>{{aluno.periodo | date:'medium'}}</td>
                     <td>
-                        <a ui-sref="programa-detail({id:aluno.programa.id})">{{aluno.programa.id}}</a>
+                        <a ui-sref="programa-detail({nome:aluno.programa.nome})">{{aluno.programa.nome}}</a>
                     </td>
                     <td>
-                        <a ui-sref="professor-detail({id:aluno.professor.id})">{{aluno.professor.id}}</a>
+                        <a ui-sref="professor-detail({nome:aluno.professor.nome})">{{aluno.professor.nome}}</a>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
