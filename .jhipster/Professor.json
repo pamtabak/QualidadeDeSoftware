@@ -21,7 +21,7 @@
         },
         {
             "fieldName": "documento",
-            "fieldType": "Integer"
+            "fieldType": "String"
         }
     ],
     "changelogDate": "20161109134406",

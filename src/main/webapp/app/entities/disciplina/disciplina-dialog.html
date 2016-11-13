@@ -16,13 +16,15 @@
         <div class="form-group">
             <label class="control-label" data-translate="jhipsterApp.disciplina.numeroDeVagas" for="field_numeroDeVagas">Numero De Vagas</label>
             <input type="number" class="form-control" name="numeroDeVagas" id="field_numeroDeVagas"
-                    ng-model="vm.disciplina.numeroDeVagas"
+                    ng-model="vm.disciplina.numeroDeVagas" required ng-min="0"
                      />
+            <p ng-show="editForm.numeroDeVagas.$error.min" class="help-block">O número de vagas não pode ser negativo.</p>                     
+            <p ng-show="!editForm.numeroDeVagas.$error.min && editForm.numeroDeVagas.$invalid && !editForm.numeroDeVagas.$pristine" class="help-block">O campo número de vagas é necessário.</p>
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="jhipsterApp.disciplina.horario" for="field_horario">Horario</label>
                 <div class="input-group">
-                    <input id="field_horario" type="text" class="form-control" name="horario" datetime-picker="{{dateformat}}" ng-model="vm.disciplina.horario" is-open="vm.datePickerOpenStatus.horario"
+                    <input id="field_horario" type="text" class="form-control" name="horario" datetime-picker="{{dateformat}}" ng-model="vm.disciplina.horario" is-open="vm.datePickerOpenStatus.horario" required
                       />
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('horario')"><i class="glyphicon glyphicon-calendar"></i></button>
@@ -32,21 +34,30 @@
         <div class="form-group">
             <label class="control-label" data-translate="jhipsterApp.disciplina.sala" for="field_sala">Sala</label>
             <input type="text" class="form-control" name="sala" id="field_sala"
-                    ng-model="vm.disciplina.sala"
+                    ng-model="vm.disciplina.sala" required
                      />
+            <p ng-show="editForm.sala.$invalid && !editForm.sala.$pristine" class="help-block">O campo sala é necessário.</p>
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="jhipsterApp.disciplina.codigo" for="field_codigo">Codigo</label>
             <input type="text" class="form-control" name="codigo" id="field_codigo"
-                    ng-model="vm.disciplina.codigo"
+                    ng-model="vm.disciplina.codigo" required
                      />
+            <p ng-show="editForm.codigo.$invalid && !editForm.codigo.$pristine" class="help-block">O campo codigo é necessário.</p>
         </div>
-
+         <div class="form-group">
+            <label class="control-label" data-translate="jhipsterApp.disciplina.nome" for="field_nome">Nome</label>
+            <input type="text" class="form-control" name="nome" id="field_nome"
+                    ng-model="vm.disciplina.nome" required
+                     />
+            <p ng-show="editForm.nome.$invalid && !editForm.nome.$pristine" class="help-block">O campo nome é necessário.</p>
+        </div>
         <div class="form-group">
             <label data-translate="jhipsterApp.disciplina.professor" for="field_professor">Professor</label>
-            <select class="form-control" id="field_professor" name="professor" ng-model="vm.disciplina.professor" ng-options="professor as professor.id for professor in vm.professors track by professor.id">
+            <select class="form-control" id="field_professor" name="professor" ng-model="vm.disciplina.professor" ng-options="professor as professor.nome for professor in vm.professors track by professor.id" required>
                 <option value=""></option>
             </select>
+            <p ng-show="editForm.professor.$invalid && !editForm.professor.$pristine" class="help-block">O campo professor é necessário.</p>
         </div>
     </div>
     <div class="modal-footer">

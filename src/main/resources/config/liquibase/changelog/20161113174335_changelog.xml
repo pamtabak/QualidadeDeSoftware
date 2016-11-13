@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="pamelatabak (generated)" id="1479059026990-1">
+      <addColumn tableName="disciplina">
+         <column name="nome" type="varchar(255)"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="pamelatabak (generated)" id="1479059026990-2">
+      <addForeignKeyConstraint baseColumnNames="id"
+                               baseTableName="aluno"
+                               constraintName="FK_5jico8r03sk0intnng9tarvv9"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="usuario"/>
+   </changeSet>
+   <changeSet author="pamelatabak (generated)" id="1479059026990-3">
+      <addForeignKeyConstraint baseColumnNames="id"
+                               baseTableName="professor"
+                               constraintName="FK_mw7fqu259ujbc08jyrlecjrm4"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="usuario"/>
+   </changeSet>
+   <changeSet author="pamelatabak (generated)" id="1479059026990-4">
+      <addForeignKeyConstraint baseColumnNames="id"
+                               baseTableName="secretaria_academica"
+                               constraintName="FK_rjmi2i0svubhvfxqd307cvpa2"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="usuario"/>
+   </changeSet>
+   <changeSet author="pamelatabak (generated)" id="1479059026990-5">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="created_date"
+                        tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="pamelatabak (generated)" id="1479059026990-6">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="horario"
+                        tableName="disciplina"/>
+   </changeSet>
+   <changeSet author="pamelatabak (generated)" id="1479059026990-7">
+      <dropDefaultValue columnDataType="timestamp" columnName="periodo" tableName="aluno"/>
+   </changeSet>
+   <changeSet author="pamelatabak (generated)" id="1479059026990-8">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="periodo"
+                        tableName="inscricao"/>
+   </changeSet>
+</databaseChangeLog>
