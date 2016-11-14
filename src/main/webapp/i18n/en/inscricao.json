@@ -3,15 +3,15 @@
         "inscricao" : {
             "home": {
                 "title": "Inscricaos",
-                "createLabel": "Create a new Inscricao",
-                "createOrEditLabel": "Create or edit a Inscricao",
-                "search": "Search for Inscricao"
+                "createLabel": "Criar uma nova Inscrição",
+                "createOrEditLabel": "Criar ou editar uma Inscrição",
+                "search": "Pesquisar Inscrição"
             },
-            "created": "A new Inscricao is created with identifier {{ param }}",
-            "updated": "A Inscricao is updated with identifier {{ param }}",
-            "deleted": "A Inscricao is deleted with identifier {{ param }}",
+            "created": "Uma nova Inscrição com identificador {{ param }} foi criada",
+            "updated": "A Inscrição do aluno {{ aluno }} na disciplina {{ disciplina }} foi alterada",
+            "deleted": "A Inscrição do aluno {{ aluno }} na disciplina {{ disciplina }} foi deletada",
             "delete": {
-                "question": "Are you sure you want to delete Inscricao {{ id }}?"
+                "question": "Tem certeza de que deseja deletar a Inscrição do aluno {{aluno}} na disciplina {{disciplina}}?"
             },
             "detail": {
                 "title": "Inscricao"
