@@ -45,11 +45,11 @@ public class AlunoResourceIntTest {
     private static final String DEFAULT_NOME = "AAAAA";
     private static final String UPDATED_NOME = "BBBBB";
 
-    private static final Integer DEFAULT_DOCUMENTO = 1;
-    private static final Integer UPDATED_DOCUMENTO = 2;
+    private static final String DEFAULT_DOCUMENTO = "1";
+    private static final String UPDATED_DOCUMENTO = "2";
 
-    private static final Integer DEFAULT_MATRICULA = 1;
-    private static final Integer UPDATED_MATRICULA = 2;
+    private static final String DEFAULT_MATRICULA = "1";
+    private static final String UPDATED_MATRICULA = "2";
 
     private static final ZonedDateTime DEFAULT_PERIODO = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneId.systemDefault());
     private static final ZonedDateTime UPDATED_PERIODO = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);

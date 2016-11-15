@@ -41,8 +41,8 @@ public class ProfessorResourceIntTest {
     private static final String DEFAULT_NOME = "AAAAA";
     private static final String UPDATED_NOME = "BBBBB";
 
-    private static final Integer DEFAULT_DOCUMENTO = 1;
-    private static final Integer UPDATED_DOCUMENTO = 2;
+    private static final String DEFAULT_DOCUMENTO = "1";
+    private static final String UPDATED_DOCUMENTO = "2";
 
     @Inject
     private ProfessorRepository professorRepository;
