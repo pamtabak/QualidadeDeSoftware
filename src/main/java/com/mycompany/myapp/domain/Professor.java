@@ -35,11 +35,13 @@ public class Professor extends Usuario {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Disciplina> professors = new HashSet<>();
 
-    public Professor(){}
+    public Professor(){
+        this.tipo = "Professor";
+    }
 
     public Professor(String login, String senha, String nome, String documento)
     {
-        super(login, senha);
+        super(login, senha, "Professor");
         this.nome      = nome;
         this.documento = documento;
     }
@@ -143,10 +145,11 @@ public class Professor extends Usuario {
     @Override
     public String toString() {
         return "Professor{" +
-            "id=" + id +
-            ", nome='" + nome + "'" +
+            "id="           + id        +
+            ", nome='"      + nome      + "'" +
             ", documento='" + documento + "'" +
-            ", login='" + login + "'" +
+            ", login='"     + login     + "'" +
+            ", tipo='"      + tipo      + "'" +
             '}';
     }
 }

@@ -29,12 +29,16 @@ public class Usuario implements Serializable
     @Column(name = "senha")
     protected String senha;
 
+    @Column(name = "tipo")
+    protected String tipo;
+
     public Usuario(){}
 
-    public Usuario(String login, String senha)
+    public Usuario(String login, String senha, String tipo)
     {
         this.login = login;
         this.senha = senha;
+        this.tipo  = tipo;
     }
 
     public Long getId() 
@@ -79,6 +83,22 @@ public class Usuario implements Serializable
         this.senha = senha;
     }
 
+     public String getTipo() 
+    {
+        return tipo;
+    }
+
+    public Usuario tipo(String tipo) 
+    {
+        this.tipo = tipo;
+        return this;
+    }
+
+    public void setTipo(String tipo) 
+    {
+        this.tipo = tipo;
+    }
+
     @Override
     public boolean equals(Object o) 
     {
@@ -111,6 +131,7 @@ public class Usuario implements Serializable
             "id=" + id +
             ", login='" + login + "'" +
             ", senha='" + senha + "'" +
+            ", tipo='"  + tipo + "'" +
             '}';
     }
 }

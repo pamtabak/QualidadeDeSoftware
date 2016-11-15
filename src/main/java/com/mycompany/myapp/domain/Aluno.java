@@ -44,11 +44,13 @@ public class Aluno extends Usuario
     @ManyToOne
     private Professor professor;
 
-    public Aluno() {}
+    public Aluno() {
+        this.tipo = "Aluno";
+    }
 
     public Aluno(String login, String senha, String nome, String documento, String matricula, ZonedDateTime periodo, Programa programa, Professor professor)
     {
-        super(login, senha);
+        super(login, senha, "Aluno");
         this.nome      = nome;
         this.documento = documento;
         this.matricula = matricula;
@@ -189,6 +191,7 @@ public class Aluno extends Usuario
             ", matricula='" + matricula + "'" +
             ", periodo='" + periodo + "'" +
             ", login='" + login + "'" +
+            ", tipo='"  + tipo + "'" +
             '}';
     }
 }

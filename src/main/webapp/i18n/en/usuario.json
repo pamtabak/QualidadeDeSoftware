@@ -17,7 +17,8 @@
                 "title": "Usuario"
             },
             "login": "Login",
-            "senha": "Senha"
+            "senha": "Senha",
+            "tipo": "Tipo"
         }
     }
 }

@@ -9,6 +9,10 @@
         {
             "fieldName": "senha",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "tipo",
+            "fieldType": "String"
         }
     ],
     "changelogDate": "20161109134404",

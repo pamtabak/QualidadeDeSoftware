@@ -17,3 +17,27 @@
 13/11/2016 16:29:25 Professor{id=null, nome='toacy', documento='12345678911', login='toacy'} criado
 13/11/2016 16:38:54 Professor{id=null, nome='toacy', documento='12345678911', login='toacy'} criado
 13/11/2016 16:46:22 Aluno{id=null, nome='Pedro', documento='123456789-11', matricula='113034881', periodo='2016-11-10T02:00Z[UTC]', login='pedro'} criado
+13/11/2016 16:50:40 Professor{id=null, nome='marroquim', documento='123456789-11', login='marroquim'} criado
+15/11/2016 14:57:18 Usuario{id=1, login='pamela', senha='pamela'} deletado
+15/11/2016 14:57:21 Professor{id=16, nome='marroquim', documento='123456789-11', login='marroquim'} deletado
+15/11/2016 15:18:55 Aluno{id=null, nome='Vinicius Campos', documento='123456789-12', matricula='113034889', periodo='2016-11-16T02:00Z[UTC]', login='Vinicius', tipo='null'} criado
+15/11/2016 15:22:43 Aluno{id=null, nome='a', documento='aaa', matricula='aaa', periodo='2016-11-10T02:00Z[UTC]', login='a', tipo='null'} criado
+15/11/2016 15:26:45 Aluno{id=null, nome='banana', documento='123456789-13', matricula='1234221', periodo='2016-11-23T02:00Z[UTC]', login='banana', tipo='null'} criado
+15/11/2016 15:28:51 Usuario{id=9, login='momo', senha='momo', tipo='null'} deletado
+15/11/2016 15:28:53 SecretariaAcademica{id=11, nome='Secretaria', login='secretaria', tipo='null'} deletado
+15/11/2016 15:28:54 Professor{id=14, nome='toacy', documento='12345678911', login='toacy', tipo='null'} deletado
+15/11/2016 15:28:57 Professor{id=14, nome='toacy', documento='12345678911', login='toacy', tipo='null'} deletado
+15/11/2016 15:28:59 Aluno{id=18, nome='a', documento='aaa', matricula='aaa', periodo='2016-11-10T00:00-02:00[America/Sao_Paulo]', login='a', tipo='null'} deletado
+15/11/2016 15:29:02 Aluno{id=19, nome='banana', documento='123456789-13', matricula='1234221', periodo='2016-11-23T00:00-02:00[America/Sao_Paulo]', login='banana', tipo='null'} deletado
+15/11/2016 15:29:04 Aluno{id=17, nome='Vinicius Campos', documento='123456789-12', matricula='113034889', periodo='2016-11-16T00:00-02:00[America/Sao_Paulo]', login='Vinicius', tipo='null'} deletado
+15/11/2016 15:29:06 Aluno{id=15, nome='Pedro', documento='123456789-11', matricula='113034881', periodo='2016-11-10T00:00-02:00[America/Sao_Paulo]', login='pedro', tipo='null'} deletado
+15/11/2016 15:29:09 Professor{id=14, nome='toacy', documento='12345678911', login='toacy', tipo='null'} deletado
+15/11/2016 15:29:27 SecretariaAcademica{id=null, nome='banana', login='banana', tipo='null'} criado
+15/11/2016 15:29:39 SecretariaAcademica{id=20, nome='banana', login='banana', tipo='null'} deletado
+15/11/2016 15:31:03 SecretariaAcademica{id=null, nome='banana', login='banana', tipo='null'} criado
+15/11/2016 15:33:56 SecretariaAcademica{id=null, nome='banana1', login='banana1', tipo='null'} criado
+15/11/2016 15:34:06 SecretariaAcademica{id=21, nome='banana', login='banana', tipo='null'} deletado
+15/11/2016 15:34:08 SecretariaAcademica{id=22, nome='banana1', login='banana1', tipo='null'} deletado
+15/11/2016 15:35:35 SecretariaAcademica{id=null, nome='banana', login='banana', tipo='Secretaria'} criado
+15/11/2016 15:37:53 Professor{id=null, nome='toacy', documento='123456789-14', login='toacy', tipo='Professor'} criado
+15/11/2016 15:38:21 Aluno{id=null, nome='pamela', documento='123456789-15', matricula='113034881', periodo='2016-11-10T02:00Z[UTC]', login='pamela', tipo='Aluno'} criado

@@ -35,11 +35,13 @@ public class SecretariaAcademica extends Usuario
         this.nome = nome;
     }
 
-    public SecretariaAcademica() {}
+    public SecretariaAcademica() {
+        this.tipo = "Secretaria";
+    }
 
     public SecretariaAcademica(String login, String senha, String nome)
     {
-        super(login, senha);
+        super(login, senha, "Secretaria");
         this.nome = nome;
     }
 
@@ -73,8 +75,9 @@ public class SecretariaAcademica extends Usuario
     {
         return "SecretariaAcademica{" +
             "id=" + id  +
-            ", nome='"  + nome + "'" +
+            ", nome='"  + nome  + "'" +
             ", login='" + login + "'" +
+            ", tipo='"  + tipo  + "'" +
             '}';
     }
 }
