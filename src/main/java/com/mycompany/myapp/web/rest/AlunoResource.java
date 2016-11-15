@@ -3,6 +3,8 @@ package com.mycompany.myapp.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.mycompany.myapp.domain.Aluno;
 
+import com.mycompany.myapp.service.UserService;
+
 import com.mycompany.myapp.repository.AlunoRepository;
 import com.mycompany.myapp.web.rest.util.HeaderUtil;
 import org.slf4j.Logger;
@@ -31,6 +33,9 @@ public class AlunoResource {
     @Inject
     private AlunoRepository alunoRepository;
 
+    @Inject
+    private UserService userService;
+
     private WriteToLog writeToLog = new WriteToLog();
     
     /**
@@ -49,6 +54,9 @@ public class AlunoResource {
         if (aluno.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("aluno", "idexists", "A new aluno cannot already have an ID")).body(null);
         }
+
+        userService.createUser(aluno.getLogin(), aluno.getSenha(), aluno.getNome(), null, aluno.getLogin() + "@gmail.com", "en");
+
         writeToLog.writeMessage(aluno.toString() + " criado");
         Aluno result = alunoRepository.save(aluno);
         return ResponseEntity.created(new URI("/api/alunos/" + result.getId()))

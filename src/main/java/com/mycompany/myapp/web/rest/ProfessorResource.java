@@ -3,6 +3,8 @@ package com.mycompany.myapp.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.mycompany.myapp.domain.Professor;
 
+import com.mycompany.myapp.service.UserService;
+
 import com.mycompany.myapp.repository.ProfessorRepository;
 import com.mycompany.myapp.web.rest.util.HeaderUtil;
 import org.slf4j.Logger;
@@ -31,6 +33,9 @@ public class ProfessorResource {
     @Inject
     private ProfessorRepository professorRepository;
 
+    @Inject
+    private UserService userService;
+
     private WriteToLog writeToLog = new WriteToLog();
 
     /**
@@ -49,6 +54,9 @@ public class ProfessorResource {
         if (professor.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("professor", "idexists", "A new professor cannot already have an ID")).body(null);
         }
+
+        userService.createUser(professor.getLogin(), professor.getSenha(), professor.getNome(), null, professor.getLogin() + "@gmail.com", "en");
+
         writeToLog.writeMessage(professor.toString() + " criado");
         Professor result = professorRepository.save(professor);
         return ResponseEntity.created(new URI("/api/professors/" + result.getId()))

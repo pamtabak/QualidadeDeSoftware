@@ -2,6 +2,9 @@ package com.mycompany.myapp.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.mycompany.myapp.domain.SecretariaAcademica;
+import com.mycompany.myapp.domain.User;
+
+import com.mycompany.myapp.service.UserService;
 
 import com.mycompany.myapp.repository.SecretariaAcademicaRepository;
 import com.mycompany.myapp.web.rest.util.HeaderUtil;
@@ -31,6 +34,9 @@ public class SecretariaAcademicaResource {
     @Inject
     private SecretariaAcademicaRepository secretariaAcademicaRepository;
 
+    @Inject
+    private UserService userService;
+
     private WriteToLog writeToLog = new WriteToLog();
 
     /**
@@ -49,6 +55,9 @@ public class SecretariaAcademicaResource {
         if (secretariaAcademica.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("secretariaAcademica", "idexists", "A new secretariaAcademica cannot already have an ID")).body(null);
         }
+
+        userService.createUser(secretariaAcademica.getLogin(), secretariaAcademica.getSenha(), secretariaAcademica.getNome(), null, secretariaAcademica.getLogin() + "@gmail.com", "en");
+
         writeToLog.writeMessage(secretariaAcademica.toString() + " criado");
         SecretariaAcademica result = secretariaAcademicaRepository.save(secretariaAcademica);
         return ResponseEntity.created(new URI("/api/secretaria-academicas/" + result.getId()))
