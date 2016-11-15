@@ -56,13 +56,13 @@
 
         <div class="form-group">
             <label data-translate="jhipsterApp.aluno.programa" for="field_programa">Programa</label>
-            <select class="form-control" id="field_programa" name="programa" ng-model="vm.aluno.programa" ng-options="programa as programa.id for programa in vm.programas track by programa.id">
+            <select class="form-control" id="field_programa" name="programa" ng-model="vm.aluno.programa" ng-options="programa as programa.nome for programa in vm.programas track by programa.id">
                 <option value=""></option>
             </select>
         </div>
         <div class="form-group">
             <label data-translate="jhipsterApp.aluno.professor" for="field_professor">Professor</label>
-            <select class="form-control" id="field_professor" name="professor" ng-model="vm.aluno.professor" ng-options="professor as professor.id for professor in vm.professors track by professor.id">
+            <select class="form-control" id="field_professor" name="professor" ng-model="vm.aluno.professor" ng-options="professor as professor.nome for professor in vm.professors track by professor.id">
                 <option value=""></option>
             </select>
         </div>
