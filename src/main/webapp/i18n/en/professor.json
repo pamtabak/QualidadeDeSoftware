@@ -8,8 +8,8 @@
                 "search": "Procurar Professor"
             },
             "created": "Um novo Professor foi criado com identificador {{ param }}",
-            "updated": "O Professor: {{ nome }} foi atualizado",
-            "deleted": "O Professor: {{ nome }} foi deletado",
+            "updated": "O Professor com identificador: {{ param }} foi atualizado",
+            "deleted": "O Professor com identificador: {{ param }} foi deletado",
             "delete": {
                 "question": "Tem certeza de que deseja deletar o Professor: {{ nome }}?"
             },

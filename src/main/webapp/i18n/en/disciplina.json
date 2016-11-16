@@ -7,9 +7,9 @@
                 "createOrEditLabel": "Criar ou editar Disciplina",
                 "search": "Procurar Disciplina"
             },
-            "created": "A Disciplina {{ nome }} foi criada",
-            "updated": "A Disciplina: {{ nome }} foi atualizada",
-            "deleted": "A Disciplina: {{ nome }} foi deletada",
+            "created": "A Disciplina foi criada com identificador: {{ param }}",
+            "updated": "A Disciplina com identificador: {{ param }} foi atualizada",
+            "deleted": "A Disciplina com identificador: {{ param }} foi deletada",
             "delete": {
                 "question": "Tem certeza que deseja deletar a Disciplina: {{ nome }}?"
             },

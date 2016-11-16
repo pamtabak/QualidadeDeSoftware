@@ -7,9 +7,9 @@
                 "createOrEditLabel": "Criar ou editar um programa",
                 "search": "Procurar programa"
             },
-            "created": "Um novo programa com o identificador {{ param }} foi criado",
-            "updated": "O Programa {{ nome }} foi atualizado",
-            "deleted": "O Programa {{ nome }} foi deletado",
+            "created": "Um novo programa com o identificador: {{ param }} foi criado",
+            "updated": "O Programa com identificador: {{ param }} foi atualizado",
+            "deleted": "O Programa com identificador: {{ param }} foi deletado",
             "delete": {
                 "question": "Tem certeza que deseja deletar o Programa: {{ nome }}?"
             },

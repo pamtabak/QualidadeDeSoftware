@@ -7,9 +7,9 @@
                 "createOrEditLabel": "Criar ou editar usuário",
                 "search": "Procurar usuário"
             },
-            "created": "Usuário foi criado com o identificador {{ id }}",
-            "updated": "Usuário {{ login }} foi atualizado",
-            "deleted": "Usuário {{ login }} foi deletado",
+            "created": "O Usuário foi criado com o identificador : {{ param }}",
+            "updated": "O Usuário com identificador: {{ param }} foi atualizado",
+            "deleted": "O Usuário com o identificador: {{ param }} foi deletado",
             "delete": {
                 "question": "Você tem certeza que deseja deletar o Usuário: {{ login }}?"
             },
