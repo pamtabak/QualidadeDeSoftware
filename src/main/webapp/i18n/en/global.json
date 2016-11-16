@@ -8,12 +8,12 @@
             "entities": {
                 "main": "Entities",
                 "programa": "Programa",
-                "usuario": "Usuario",
+                "usuario": "Usuário",
                 "aluno": "Aluno",
                 "professor": "Professor",
-                "secretariaAcademica": "Secretaria Academica",
+                "secretariaAcademica": "Secretaria Acadêmica",
                 "disciplina": "Disciplina",
-                "inscricao": "Inscricao",
+                "inscricao": "Inscrição",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

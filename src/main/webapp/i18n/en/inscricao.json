@@ -2,7 +2,7 @@
     "jhipsterApp": {
         "inscricao" : {
             "home": {
-                "title": "Inscricaos",
+                "title": "Inscrições",
                 "createLabel": "Criar uma nova Inscrição",
                 "createOrEditLabel": "Criar ou editar uma Inscrição",
                 "search": "Pesquisar Inscrição"
