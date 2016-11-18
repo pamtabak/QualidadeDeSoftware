@@ -3,15 +3,15 @@
         "professor" : {
             "home": {
                 "title": "Professors",
-                "createLabel": "Create a new Professor",
-                "createOrEditLabel": "Create or edit a Professor",
-                "search": "Search for Professor"
+                "createLabel": "Criar um novo Professor",
+                "createOrEditLabel": "Criar ou editar um Professor",
+                "search": "Procurar Professor"
             },
-            "created": "A new Professor is created with identifier {{ param }}",
-            "updated": "A Professor is updated with identifier {{ param }}",
-            "deleted": "A Professor is deleted with identifier {{ param }}",
+            "created": "Um novo Professor foi criado com identificador {{ param }}",
+            "updated": "O Professor com identificador: {{ param }} foi atualizado",
+            "deleted": "O Professor com identificador: {{ param }} foi deletado",
             "delete": {
-                "question": "Are you sure you want to delete Professor {{ id }}?"
+                "question": "Tem certeza de que deseja deletar o Professor: {{ nome }}?"
             },
             "detail": {
                 "title": "Professor"

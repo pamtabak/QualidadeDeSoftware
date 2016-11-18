@@ -2,19 +2,19 @@
     "jhipsterApp": {
         "usuario" : {
             "home": {
-                "title": "Usuarios",
-                "createLabel": "Create a new Usuario",
-                "createOrEditLabel": "Create or edit a Usuario",
-                "search": "Search for Usuario"
+                "title": "Usuários",
+                "createLabel": "Criar um novo usuário",
+                "createOrEditLabel": "Criar ou editar usuário",
+                "search": "Procurar usuário"
             },
-            "created": "A new Usuario is created with identifier {{ param }}",
-            "updated": "A Usuario is updated with identifier {{ param }}",
-            "deleted": "A Usuario is deleted with identifier {{ param }}",
+            "created": "O Usuário foi criado com o identificador : {{ param }}",
+            "updated": "O Usuário com identificador: {{ param }} foi atualizado",
+            "deleted": "O Usuário com o identificador: {{ param }} foi deletado",
             "delete": {
-                "question": "Are you sure you want to delete Usuario {{ id }}?"
+                "question": "Você tem certeza que deseja deletar o Usuário: {{ login }}?"
             },
             "detail": {
-                "title": "Usuario"
+                "title": "Usuário"
             },
             "login": "Login",
             "senha": "Senha",

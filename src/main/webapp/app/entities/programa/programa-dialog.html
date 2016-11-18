@@ -16,14 +16,16 @@
         <div class="form-group">
             <label class="control-label" data-translate="jhipsterApp.programa.nome" for="field_nome">Nome</label>
             <input type="text" class="form-control" name="nome" id="field_nome"
-                    ng-model="vm.programa.nome"
+                    ng-model="vm.programa.nome" required
                      />
+            <p ng-show="editForm.nome.$invalid && !editForm.nome.$pristine" class="help-block">O campo de nome é necessário.</p>
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="jhipsterApp.programa.codigo" for="field_codigo">Codigo</label>
             <input type="number" class="form-control" name="codigo" id="field_codigo"
-                    ng-model="vm.programa.codigo"
+                    ng-model="vm.programa.codigo" required
                      />
+            <p ng-show="editForm.codigo.$invalid && !editForm.codigo.$pristine" class="help-block">O campo de código é necessário.</p>
         </div>
 
     </div>
