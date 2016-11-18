@@ -16,26 +16,30 @@
          <div class="form-group">
             <label class="control-label" data-translate="jhipsterApp.professor.login" for="field_login">Login</label>
             <input type="text" class="form-control" name="login" id="field_login"
-                    ng-model="vm.professor.login"
+                    ng-model="vm.professor.login" required
                      />
+            <p ng-show="editForm.login.$invalid && !editForm.login.$pristine" class="help-block">O campo login é necessário.</p>
         </div>
          <div class="form-group">
             <label class="control-label" data-translate="jhipsterApp.professor.senha" for="field_senha">Senha</label>
             <input type="password" class="form-control" name="senha" id="field_senha"
-                    ng-model="vm.professor.senha"
+                    ng-model="vm.professor.senha" required
                      />
+            <p ng-show="editForm.senha.$invalid && !editForm.senha.$pristine" class="help-block">O campo senha é necessário.</p>
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="jhipsterApp.professor.nome" for="field_nome">Nome</label>
             <input type="text" class="form-control" name="nome" id="field_nome"
-                    ng-model="vm.professor.nome"
+                    ng-model="vm.professor.nome" required
                      />
+            <p ng-show="editForm.nome.$invalid && !editForm.nome.$pristine" class="help-block">O campo nome é necessário.</p>
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="jhipsterApp.professor.documento" for="field_documento">Documento</label>
             <input type="text" class="form-control" name="documento" id="field_documento"
-                    ng-model="vm.professor.documento"
+                    ng-model="vm.professor.documento" required
                      />
+            <p ng-show="editForm.documento.$invalid && !editForm.documento.$pristine" class="help-block">O campo documento nome é necessário.</p>
         </div>
 
     </div>

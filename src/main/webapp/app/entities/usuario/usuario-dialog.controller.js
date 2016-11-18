@@ -22,6 +22,12 @@
             $uibModalInstance.dismiss('cancel');
         }
 
+        $scope.submitForm = function(isValid){
+            if(isValid){
+                save();         
+            }
+        }
+
         function save () {
             vm.isSaving = true;
             if (vm.usuario.id !== null) {
@@ -30,6 +36,8 @@
                 Usuario.save(vm.usuario, onSaveSuccess, onSaveError);
             }
         }
+
+
 
         function onSaveSuccess (result) {
             $scope.$emit('jhipsterApp:usuarioUpdate', result);

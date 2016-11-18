@@ -8,12 +8,12 @@
             "entities": {
                 "main": "Entities",
                 "programa": "Programa",
-                "usuario": "Usuario",
+                "usuario": "Usuário",
                 "aluno": "Aluno",
                 "professor": "Professor",
-                "secretariaAcademica": "Secretaria Academica",
+                "secretariaAcademica": "Secretaria Acadêmica",
                 "disciplina": "Disciplina",
-                "inscricao": "Inscricao",
+                "inscricao": "Inscrição",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -88,18 +88,18 @@
     "entity": {
         "action": {
             "addblob": "Add blob",
-            "addimage": "Add image",
-            "back": "Back",
-            "cancel": "Cancel",
-            "delete": "Delete",
-            "edit": "Edit",
-            "open": "Open",
-            "save": "Save",
-            "view": "View"
+            "addimage": "Adicionar imagem",
+            "back": "Voltar",
+            "cancel": "Cancelar",
+            "delete": "Deletar",
+            "edit": "Editar",
+            "open": "Abrir",
+            "save": "Salvar",
+            "view": "Visualizar"
         },
         "detail": {
-            "field": "Field",
-            "value": "Value"
+            "field": "Campo",
+            "value": "Valor"
         },
         "delete": {
             "title": "Confirm delete operation"
