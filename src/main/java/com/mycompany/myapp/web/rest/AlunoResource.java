@@ -2,10 +2,17 @@ package com.mycompany.myapp.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.mycompany.myapp.domain.Aluno;
+import com.mycompany.myapp.domain.User;
+import com.mycompany.myapp.domain.Authority;
 
 import com.mycompany.myapp.service.UserService;
 
 import com.mycompany.myapp.repository.AlunoRepository;
+import com.mycompany.myapp.repository.UserRepository;
+import com.mycompany.myapp.repository.AuthorityRepository;
+
+import com.mycompany.myapp.security.AuthoritiesConstants;
+
 import com.mycompany.myapp.web.rest.util.HeaderUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +27,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * REST controller for managing Aluno.
@@ -29,15 +37,23 @@ import java.util.Optional;
 public class AlunoResource {
 
     private final Logger log = LoggerFactory.getLogger(AlunoResource.class);
-        
+
     @Inject
     private AlunoRepository alunoRepository;
 
     @Inject
     private UserService userService;
 
+    @Inject
+    private AuthorityRepository authorityRepository;
+
+    @Inject
+    private UserRepository userRepository;
+
+
     private WriteToLog writeToLog = new WriteToLog();
-    
+
+
     /**
      * POST  /alunos : Create a new aluno.
      *
@@ -55,7 +71,14 @@ public class AlunoResource {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("aluno", "idexists", "A new aluno cannot already have an ID")).body(null);
         }
 
-        userService.createUser(aluno.getLogin(), aluno.getSenha(), aluno.getNome(), null, aluno.getLogin() + "@gmail.com", "en");
+        User newUser = userService.createUser(aluno.getLogin(), aluno.getSenha(), aluno.getNome(), null, aluno.getLogin() + "@gmail.com", "en");
+        Authority authority = authorityRepository.findOne(AuthoritiesConstants.ALUNO);
+        Set<Authority> authorities = newUser.getAuthorities();
+        authorities.add(authority);
+
+        newUser.setAuthorities(authorities);
+        userRepository.save(newUser);
+
 
         writeToLog.writeMessage(aluno.toString() + " criado");
         Aluno result = alunoRepository.save(aluno);

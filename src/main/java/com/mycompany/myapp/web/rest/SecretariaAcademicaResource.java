@@ -3,10 +3,17 @@ package com.mycompany.myapp.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.mycompany.myapp.domain.SecretariaAcademica;
 import com.mycompany.myapp.domain.User;
+import com.mycompany.myapp.domain.Authority;
+
 
 import com.mycompany.myapp.service.UserService;
 
 import com.mycompany.myapp.repository.SecretariaAcademicaRepository;
+import com.mycompany.myapp.repository.UserRepository;
+import com.mycompany.myapp.repository.AuthorityRepository;
+
+import com.mycompany.myapp.security.AuthoritiesConstants;
+
 import com.mycompany.myapp.web.rest.util.HeaderUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +28,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * REST controller for managing SecretariaAcademica.
@@ -36,6 +44,12 @@ public class SecretariaAcademicaResource {
 
     @Inject
     private UserService userService;
+
+    @Inject
+    private AuthorityRepository authorityRepository;
+
+    @Inject
+    private UserRepository userRepository;
 
     private WriteToLog writeToLog = new WriteToLog();
 
@@ -56,7 +70,12 @@ public class SecretariaAcademicaResource {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("secretariaAcademica", "idexists", "A new secretariaAcademica cannot already have an ID")).body(null);
         }
 
-        userService.createUser(secretariaAcademica.getLogin(), secretariaAcademica.getSenha(), secretariaAcademica.getNome(), null, secretariaAcademica.getLogin() + "@gmail.com", "en");
+        User newUser = userService.createUser(secretariaAcademica.getLogin(), secretariaAcademica.getSenha(), secretariaAcademica.getNome(), null, secretariaAcademica.getLogin() + "@gmail.com", "en");
+        Authority authority = authorityRepository.findOne(AuthoritiesConstants.SECRETARIA);
+        Set<Authority> authorities = newUser.getAuthorities();
+        authorities.add(authority);
+        newUser.setAuthorities(authorities);
+        userRepository.save(newUser);
 
         writeToLog.writeMessage(secretariaAcademica.toString() + " criado");
         SecretariaAcademica result = secretariaAcademicaRepository.save(secretariaAcademica);

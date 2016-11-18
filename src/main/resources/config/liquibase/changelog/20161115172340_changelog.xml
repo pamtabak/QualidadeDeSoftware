@@ -21,4 +21,34 @@
                         columnName="periodo"
                         tableName="inscricao"/>
    </changeSet>
+   <changeSet author="liquibase-docs" id="1479230648855-5">
+    <insert
+            dbms="h2"
+            schemaName="public"
+            tableName="JHI_AUTHORITY">
+        <column name="name" value="ROLE_ALUNO"/>
+    </insert>
+    </changeSet>
+    <changeSet author="liquibase-docs" id="1479230648855-6">
+    <insert
+            dbms="h2"
+            schemaName="public"
+            tableName="JHI_AUTHORITY">
+        <column name="name" value="ROLE_PROFESSOR"/>
+    </insert>
+    </changeSet>
+    <changeSet author="liquibase-docs" id="1479230648855-7">
+    <insert
+            dbms="h2"
+            schemaName="public"
+            tableName="JHI_AUTHORITY">
+        <column name="name" value="ROLE_SECRETARIA"/>
+    </insert>
+    </changeSet>
+   <!--    <changeSet author="pedroeusebio (generated)" id="1479230648855-5">
+        <sqlCheck expectedResult="0">
+            INSERT INTO JHI_AUTHORITY
+            (name) VALUES ("ROLE_ALUNO")
+        </sqlCheck>
+    </changeSet/> -->
 </databaseChangeLog>
