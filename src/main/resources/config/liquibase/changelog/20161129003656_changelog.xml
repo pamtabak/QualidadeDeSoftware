@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="pedroeusebio (generated)" id="1480379832703-1">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="created_date"
+                        tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="pedroeusebio (generated)" id="1480379832703-2">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="horario"
+                        tableName="disciplina"/>
+   </changeSet>
+   <changeSet author="pedroeusebio (generated)" id="1480379832703-3">
+      <dropDefaultValue columnDataType="timestamp" columnName="periodo" tableName="aluno"/>
+   </changeSet>
+   <changeSet author="pedroeusebio (generated)" id="1480379832703-4">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="periodo"
+                        tableName="inscricao"/>
+   </changeSet>
+   <changeSet author="pedroeusebio (generated)" id="1480379832703-5">
+    <addColumn tableName="disciplina">
+      <column name="estado" type="varchar(255)"/>
+    </addColumn>
+   </changeSet>
+</databaseChangeLog>

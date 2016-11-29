@@ -59,6 +59,13 @@
             </select>
             <p ng-show="editForm.professor.$invalid && !editForm.professor.$pristine" class="help-block">O campo professor é necessário.</p>
         </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="jhipsterApp.disciplina.estado" for="field_estado">Estado</label>
+            <input type="text" class="form-control" name="estado" id="field_estado"
+                    ng-model="vm.disciplina.estado" required
+                     />
+            <p ng-show="editForm.estado.$invalid && !editForm.estado.$pristine" class="help-block">O campo estado é necessário.</p>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

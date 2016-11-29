@@ -40,6 +40,9 @@ public class Disciplina implements Serializable {
     @Column(name = "nome")
     private String nome;
 
+    @Column(name = "estado")
+    private String estado;
+
     @ManyToOne
     private Professor professor;
 
@@ -119,6 +122,19 @@ public class Disciplina implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public Disciplina estado(String estado) {
+        this.estado = estado;
+        return this;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public Professor getProfessor() {

@@ -22,7 +22,8 @@
             "codigo": "Código",
             "nome":"Nome",
             "professor": "Professor",
-            "disciplina": "Disciplina"
+            "disciplina": "Disciplina",
+            "estado": "Estado"
         }
     }
 }
