@@ -1,0 +1,26 @@
+{
+    "jhipsterApp": {
+        "grau" : {
+            "home": {
+                "title": "Lançamento de grau e frequência",
+                "createLabel": "Criar uma nova Inscrição",
+                "createOrEditLabel": "Criar ou editar uma Inscrição",
+                "search": "Pesquisar Inscrição"
+            },
+            "created": "Uma nova Inscrição com identificador {{ param }} foi criada",
+            "updated": "A Inscrição do aluno {{ aluno }} na disciplina {{ disciplina }} foi alterada",
+            "deleted": "A Inscrição do aluno {{ aluno }} na disciplina {{ disciplina }} foi deletada",
+            "delete": {
+                "question": "Tem certeza de que deseja deletar a Inscrição do aluno {{aluno}} na disciplina {{disciplina}}?"
+            },
+            "detail": {
+                "title": "Inscricao"
+            },
+            "periodo": "Periodo",
+            "grau": "Grau",
+            "frequencia": "Frequencia",
+            "aluno": "Aluno",
+            "disciplina": "Disciplina"
+        }
+    }
+}
