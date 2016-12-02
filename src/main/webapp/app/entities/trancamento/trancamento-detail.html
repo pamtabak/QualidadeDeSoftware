@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="jhipsterApp.inscricao.detail.title">Inscricao</span> {{vm.inscricao.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="jhipsterApp.inscricao.periodo">Periodo</span></dt>
+        <dd>
+            <span>{{vm.inscricao.periodo | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.inscricao.grau">Grau</span></dt>
+        <dd>
+            <span>{{vm.inscricao.grau}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.inscricao.frequencia">Frequencia</span></dt>
+        <dd>
+            <span>{{vm.inscricao.frequencia}}</span>
+        </dd>
+        <dt><span data-translate="jhipsterApp.inscricao.aluno">Aluno</span></dt>
+        <dd>
+            <a ui-sref="aluno-detail({id:vm.inscricao.aluno.nome})">{{vm.inscricao.aluno.nome}}</a>
+        </dd>
+        <dt><span data-translate="jhipsterApp.inscricao.disciplina">Disciplina</span></dt>
+        <dd>
+            <a ui-sref="disciplina-detail({id:vm.inscricao.disciplina.nome})">{{vm.inscricao.disciplina.nome}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="grau-detail.edit({id:vm.inscricao.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

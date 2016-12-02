@@ -3,11 +3,11 @@
 
     angular
         .module('jhipsterApp')
-        .controller('GrauDialogController', GrauDialogController);
+        .controller('TrancamentoDialogController', TrancamentoDialogController);
 
-    GrauDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Inscricao', 'Aluno', 'Disciplina','Grau'];
+    TrancamentoDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Inscricao', 'Aluno', 'Disciplina','Trancamento'];
 
-    function GrauDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Inscricao, Aluno, Disciplina) {
+    function TrancamentoDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Inscricao, Aluno, Disciplina) {
         var vm = this;
 
         vm.inscricao = entity;
@@ -36,7 +36,7 @@
         }
 
         function onSaveSuccess (result) {
-            $scope.$emit('jhipsterApp:grauUpdate', result);
+            $scope.$emit('jhipsterApp:trancamentoUpdate', result);
             $uibModalInstance.close(result);
             vm.isSaving = false;
         }
