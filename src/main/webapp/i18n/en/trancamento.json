@@ -1,29 +1,24 @@
 {
     "jhipsterApp": {
-        "grau" : {
+        "trancamento" : {
             "home": {
-                "title": "Lançamento de grau e frequência",
-                "createLabel": "Inserido um novo grau e frequência",
-                "createOrEditLabel": "Criar ou editar grau e frequência",
-                "search": "Pesquisar grau e frequência"
+                "title": "Pedidos de trancamento de inscrição em disciplinas",
+                "createOrEditLabel": "Pedido de trancamento foi criado com sucesso!"
             },
-            "created": "Um grau e frequência com identificador {{ param }} foi criada",
-            "updated": "O grau e a frequência do aluno {{ aluno }} na disciplina {{ disciplina }} foram alterados",
-            "deleted": "O grau e a frequência do aluno {{ aluno }} na disciplina {{ disciplina }} foram deletados",
-            "delete": {
-                "question": "Tem certeza de que deseja deletar o grau e a frequência do aluno {{aluno}} na disciplina {{disciplina}}?"
+            "updated": "Pedido de trancamento foi criado com sucesso!",            
+            "trancar": {
+                "question": "Tem certeza de que deseja trancar esta inscrição?",
+                "title" : "Confirmar pedido de trancamento."
             },
             "detail": {
-                "title": "Lançamento de grau e frequência"
-            },
-            "periodo": "Periodo",
-            "grau": "Grau",
-            "frequencia": "Frequencia",
+                "title": "Pedidos de trancamento de inscrição em disciplinas"
+            },            
             "aluno": "Aluno",
-            "disciplina": "Disciplina"
+            "disciplina": "Disciplina",
+            "estado": "Estado"
         },
         "inscricao" : {
-            "updated": "O grau e a frequência do aluno {{ aluno }} na disciplina {{ disciplina }} foram alterados"         
+            "updated": "O pedido de trancamento foi efetuado."         
         }
     }
 }

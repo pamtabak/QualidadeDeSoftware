@@ -6,8 +6,9 @@
         <table class="jh-table table table-striped">
             <thead>
                 <tr>                                        
-                    <th><span data-translate="jhipsterApp.grau.aluno">Aluno</span></th>
-                    <th><span data-translate="jhipsterApp.grau.disciplina">Disciplina</span></th>
+                    <th><span data-translate="jhipsterApp.trancamento.aluno">Aluno</span></th>
+                    <th><span data-translate="jhipsterApp.trancamento.disciplina">Disciplina</span></th>
+                    <th><span data-translate="jhipsterApp.trancamento.estado">Estado</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -20,13 +21,16 @@
                     <td>
                         <a ui-sref="disciplina-detail({id:inscricao.disciplina.codigo})">{{inscricao.disciplina.codigo}}</a>
                     </td>
+                    <td>
+                        {{inscricao.estado}}
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
                                     ui-sref="trancamento.delete({id:inscricao.id})"
                                     class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                                <span class="hidden-xs hidden-sm">Trancar</span>
                             </button>                          
                         </div>
                     </td>
