@@ -31,6 +31,9 @@ public class Inscricao implements Serializable {
     @Column(name = "frequencia")
     private Integer frequencia;
 
+    @Column(name = "estado")
+    private String estado;
+
     @ManyToOne
     private Aluno aluno;
 
@@ -110,7 +113,18 @@ public class Inscricao implements Serializable {
         this.disciplina = disciplina;
     }
 
-    @Override
+    public String getEstado() {
+        return estado;
+    }
+    public Inscricao estado(String estado) {
+        this.estado = estado;
+        return this;
+    }
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+     @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
