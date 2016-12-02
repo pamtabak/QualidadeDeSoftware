@@ -20,7 +20,8 @@
             "grau": "Grau",
             "frequencia": "Frequencia",
             "aluno": "Aluno",
-            "disciplina": "Disciplina"
+            "disciplina": "Disciplina",
+            "estado": "Estado"
         }
     }
 }
