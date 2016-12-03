@@ -50,6 +50,7 @@ public class DisciplinaResource {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("disciplina", "idexists", "A new disciplina cannot already have an ID")).body(null);
         }
         writeToLog.writeMessage(disciplina.toString() + " criada");
+        disciplina.setNumeroDeInscritos(0);
         Disciplina result = disciplinaRepository.save(disciplina);
         return ResponseEntity.created(new URI("/api/disciplinas/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("disciplina", result.getId().toString()))

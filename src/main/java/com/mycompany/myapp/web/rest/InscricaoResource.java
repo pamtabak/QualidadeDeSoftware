@@ -2,8 +2,11 @@ package com.mycompany.myapp.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.mycompany.myapp.domain.Inscricao;
+import com.mycompany.myapp.domain.Disciplina;
+import com.mycompany.myapp.domain.Aluno;
 
 import com.mycompany.myapp.repository.InscricaoRepository;
+import com.mycompany.myapp.repository.DisciplinaRepository;
 import com.mycompany.myapp.web.rest.util.HeaderUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,6 +34,9 @@ public class InscricaoResource {
     @Inject
     private InscricaoRepository inscricaoRepository;
 
+    @Inject
+    private DisciplinaRepository disciplinaRepository;
+
     private WriteToLog writeToLog = new WriteToLog();
 
     /**
@@ -49,11 +55,28 @@ public class InscricaoResource {
         if (inscricao.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("inscricao", "idexists", "A new inscricao cannot already have an ID")).body(null);
         }
-        writeToLog.writeMessage(inscricao.toString() + " criada");
-        Inscricao result = inscricaoRepository.save(inscricao);
-        return ResponseEntity.created(new URI("/api/inscricaos/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert("inscricao", result.getId().toString()))
-            .body(result);
+        List<Inscricao> inscricaos = inscricaoRepository.findAll();
+        Disciplina disciplina = inscricao.getDisciplina();
+        Aluno aluno = inscricao.getAluno();
+        Integer numeroDeVagas = disciplina.getNumeroDeVagas();
+        Integer numeroDeInscritos = disciplina.getNumeroDeInscritos();
+        for ( Inscricao ins : inscricaos ) {
+            if(ins.getDisciplina().equals(disciplina) && ins.getAluno().equals(aluno)) {
+                return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("inscricao", "idexists", "Aluno  já possui inscricao nesssa disciplina")).body(null);
+            }
+        }
+        if(numeroDeInscritos + 1 <= numeroDeVagas) {
+            writeToLog.writeMessage(inscricao.toString() + " criada");
+            inscricao.setEstado("solicitado");
+            Inscricao result = inscricaoRepository.save(inscricao);
+            disciplina.setNumeroDeInscritos(numeroDeInscritos + 1);
+            disciplinaRepository.save(disciplina);
+            return ResponseEntity.created(new URI("/api/inscricaos/" + result.getId()))
+                .headers(HeaderUtil.createEntityCreationAlert("inscricao", result.getId().toString()))
+                .body(result);
+        } else {
+            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("inscricao", "idexists", "a disciplina ja esta com capacidade maxima")).body(null);
+        }
     }
 
     /**

@@ -21,7 +21,7 @@
             <p ng-show="editForm.numeroDeVagas.$error.min" class="help-block">O número de vagas não pode ser negativo.</p>                     
             <p ng-show="!editForm.numeroDeVagas.$error.min && editForm.numeroDeVagas.$invalid && !editForm.numeroDeVagas.$pristine" class="help-block">O campo número de vagas é necessário.</p>
         </div>
-        <div class="form-group" ng-init="vm.disciplina.numeroDeInscritos=0">
+        <div class="form-group" >
             <label class="control-label" data-translate="jhipsterApp.disciplina.numeroDeInscritos" for="field_numeroDeInscritos">Numero De Inscritos</label>
             <input type="number" class="form-control" name="numeroDeIncritos" id="field_numeroDeInscritos"
                     ng-model="vm.disciplina.numeroDeInscritos"
