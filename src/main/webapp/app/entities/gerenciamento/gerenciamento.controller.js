@@ -3,23 +3,25 @@
 
     angular
         .module('jhipsterApp')
-        .controller('TrancamentoController', TrancamentoController);
+        .controller('GerenciamentoController', GerenciamentoController);
 
-  TrancamentoController.$inject = ['$scope', '$state','Principal',  'Trancamento', 'Disciplina'];
+  GerenciamentoController.$inject = ['$scope', '$state','Principal',  'Gerenciamento', 'Disciplina'];
 
-  function TrancamentoController ($scope, $state, Principal,  Inscricao, Disciplina) {
+  function GerenciamentoController ($scope, $state, Principal,  Inscricao, Disciplina) {
     var vm = this;
 
     vm.inscricaos = [];
+    vm.agreement = false;
 
     Principal.identity().then(r => {
       var authorities = r.authorities;
       if(authorities.indexOf("ROLE_ADMIN") != -1 || authorities.indexOf('ROLE_SECRETARIA') != -1) {
         loadAll();
-      } else if(authorities.indexOf('ROLE_ALUNO')) {
+      } else if(authorities.indexOf('ROLE_PROFESSOR') != -1 ) {
         Inscricao.query(function(result) {
           vm.inscricaos = result.filter(function(element) {
-            return element.aluno.login === r.login;
+            return element.aluno.professor.login === r.login && 
+            element.estado != "trancado";
           });
         });
       }
@@ -33,5 +35,6 @@
                 vm.disciplinas = result;
             });
         }
+
     }
 })();

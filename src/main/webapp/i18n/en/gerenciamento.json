@@ -1,0 +1,28 @@
+{
+    "jhipsterApp": {
+        "gerenciamento" : {
+            "home": {
+                "title": "Gerenciamento de inscrições",
+                "createOrEditLabel": "Pedido de gerenciamento foi criado com sucesso!"
+            },
+            "updated": "Pedido de gerenciamento foi criado com sucesso!",            
+            "concordar": {
+                "question": "Tem certeza de que deseja concordar esta inscrição?",
+                "title" : "Concordar pedido de inscrição."
+            },
+            "não-concordar": {
+                "question": "Tem certeza de que não deseja concordar esta inscrição?",
+                "title" : "Concordar pedido de inscrição."
+            },
+            "detail": {
+                "title": "Gerenciamento de inscrições"
+            },            
+            "aluno": "Aluno",
+            "disciplina": "Disciplina",
+            "estado": "Estado"
+        },
+        "inscricao" : {
+            "updated": "O pedido foi efetuado."         
+        }
+    }
+}

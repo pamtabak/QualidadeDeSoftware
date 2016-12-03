@@ -1,0 +1,45 @@
+<div>
+    <h2 data-translate="jhipsterApp.gerenciamento.home.title">Gerenciamento de inscrição</h2>
+    <jhi-alert></jhi-alert>    
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>                                        
+                    <th><span data-translate="jhipsterApp.gerenciamento.aluno">Aluno</span></th>
+                    <th><span data-translate="jhipsterApp.gerenciamento.disciplina">Disciplina</span></th>                    
+                    <th><span data-translate="jhipsterApp.gerenciamento.estado">Estado</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="inscricao in vm.inscricaos track by inscricao.id">
+                    
+                    <td>
+                        <a ui-sref="aluno-detail({id:inscricao.aluno.nome})">{{inscricao.aluno.nome}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="disciplina-detail({id:inscricao.disciplina.codigo})">{{inscricao.disciplina.nome}}</a>
+                    </td>
+                    <td>{{inscricao.estado}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="gerenciamento.agree({id:inscricao.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" >Concordar</span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="gerenciamento.delete({id:inscricao.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm">Não concordar</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
