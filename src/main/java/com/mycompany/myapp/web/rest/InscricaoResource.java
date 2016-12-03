@@ -62,15 +62,13 @@ public class InscricaoResource {
         Integer numeroDeInscritos = disciplina.getNumeroDeInscritos();
         for ( Inscricao ins : inscricaos ) {
             if(ins.getDisciplina().equals(disciplina) && ins.getAluno().equals(aluno)) {
-                return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("inscricao", "idexists", "Aluno  já possui inscricao nesssa disciplina")).body(null);
+                return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("inscricao", "idexists", "Aluno  já possui inscricao nessa disciplina")).body(null);
             }
         }
         if(numeroDeInscritos + 1 <= numeroDeVagas) {
             writeToLog.writeMessage(inscricao.toString() + " criada");
             inscricao.setEstado("solicitado");
             Inscricao result = inscricaoRepository.save(inscricao);
-            disciplina.setNumeroDeInscritos(numeroDeInscritos + 1);
-            disciplinaRepository.save(disciplina);
             return ResponseEntity.created(new URI("/api/inscricaos/" + result.getId()))
                 .headers(HeaderUtil.createEntityCreationAlert("inscricao", result.getId().toString()))
                 .body(result);
@@ -96,6 +94,28 @@ public class InscricaoResource {
         log.debug("REST request to update Inscricao : {}", inscricao);
         if (inscricao.getId() == null) {
             return createInscricao(inscricao);
+        }
+        String estado = inscricao.getEstado();
+        Inscricao inscricaoDB = inscricaoRepository.findOne(inscricao.getId());
+        System.out.println(estado);
+        if(estado.equals("concordado")) {
+            Disciplina disciplina = inscricao.getDisciplina();
+            Integer numeroDeInscritos = disciplina.getNumeroDeInscritos();
+            if(inscricaoDB.getEstado().equals("solicitado")) {
+                if(numeroDeInscritos + 1 <=  disciplina.getNumeroDeVagas()) {
+                    disciplina.setNumeroDeInscritos(numeroDeInscritos + 1);
+                    disciplinaRepository.save(disciplina);
+                    inscricao.setEstado("inscrito");
+                }  
+            } else if( inscricaoDB.getEstado().equals("solicitar trancamento")) {
+                disciplina.setNumeroDeInscritos(numeroDeInscritos - 1);
+                disciplinaRepository.save(disciplina);
+                inscricao.setEstado("trancado");
+            }
+        } else if(estado.equals("não concordado")){
+            if(inscricaoDB.getEstado().equals("solicitar trancamento")){
+                inscricao.setEstado("inscrito");
+            }
         }
         writeToLog.writeMessage(inscricao.toString() + " atualizada");
         Inscricao result = inscricaoRepository.save(inscricao);

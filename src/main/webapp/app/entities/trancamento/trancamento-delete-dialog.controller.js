@@ -19,7 +19,7 @@
         }
 
         function confirmUnsubscribe () {
-            vm.inscricao.estado = "trancado";
+            vm.inscricao.estado = "solicitar trancamento";
             Inscricao.update(vm.inscricao, onSaveSuccess, onSaveError);            
         }
 

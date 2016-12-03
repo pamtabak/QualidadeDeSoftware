@@ -21,7 +21,7 @@
         Inscricao.query(function(result) {
           vm.inscricaos = result.filter(function(element) {
             return element.aluno.professor.login === r.login && 
-            element.estado != "trancado";
+            element.estado != "trancado" && element.estado != 'inscrito';
           });
         });
       }

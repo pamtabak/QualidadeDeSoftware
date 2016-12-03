@@ -19,7 +19,7 @@
       } else if(authorities.indexOf('ROLE_ALUNO')) {
         Inscricao.query(function(result) {
           vm.inscricaos = result.filter(function(element) {
-            return element.aluno.login === r.login;
+            return element.aluno.login === r.login && element.estado === 'inscrito';
           });
         });
       }
