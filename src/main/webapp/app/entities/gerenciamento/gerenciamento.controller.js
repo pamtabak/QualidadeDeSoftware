@@ -20,8 +20,12 @@
       } else if(authorities.indexOf('ROLE_PROFESSOR') != -1 ) {
         Inscricao.query(function(result) {
           vm.inscricaos = result.filter(function(element) {
-            return element.aluno.professor.login === r.login && 
-            element.estado != "trancado" && element.estado != 'inscrito';
+            if(element.aluno.professor) {
+              return element.aluno.professor.login === r.login && 
+              element.estado != "trancado" && element.estado != 'inscrito' ;
+            } else {
+              return ;
+            }
           });
         });
       }
