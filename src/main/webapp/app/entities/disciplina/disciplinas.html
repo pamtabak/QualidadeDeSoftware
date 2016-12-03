@@ -20,6 +20,7 @@
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
                     <th><span data-translate="jhipsterApp.disciplina.numeroDeVagas">Numero De Vagas</span></th>
+                    <th><span data-translate="jhipsterApp.disciplina.numeroDeInscritos">Numero De Vagas</span></th>
                     <th><span data-translate="jhipsterApp.disciplina.horario">Horario</span></th>
                     <th><span data-translate="jhipsterApp.disciplina.sala">Sala</span></th>
                     <th><span data-translate="jhipsterApp.disciplina.codigo">Codigo</span></th>
@@ -33,6 +34,7 @@
                 <tr ng-repeat="disciplina in vm.disciplinas track by disciplina.id">
                     <td><a ui-sref="disciplina-detail({id:disciplina.id})">{{disciplina.id}}</a></td>
                     <td>{{disciplina.numeroDeVagas}}</td>
+                    <td>{{disciplina.numeroDeInscritos}}</td>
                     <td>{{disciplina.horario | date:'medium'}}</td>
                     <td>{{disciplina.sala}}</td>
                     <td>{{disciplina.codigo}}</td>

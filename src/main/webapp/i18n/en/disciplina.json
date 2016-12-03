@@ -17,6 +17,7 @@
                 "title": "Disciplina"
             },
             "numeroDeVagas": "Número De Vagas",
+            "numeroDeInscritos": "Número De Inscritos",
             "horario": "Horário",
             "sala": "Sala",
             "codigo": "Código",
