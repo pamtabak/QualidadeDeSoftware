@@ -15,7 +15,11 @@
         vm.datePickerOpenStatus = {};
         vm.openCalendar = openCalendar;
         vm.save = save;        
-        vm.disciplinas = Disciplina.query();        
+        Disciplina.query(function(result) {
+            vm.disciplinas = result.filter(function(element){
+                return (element.estado === "Ativa");
+            });
+        });        
 
         Principal.identity().then(r => {                        
             var authorities = r.authorities;                        
