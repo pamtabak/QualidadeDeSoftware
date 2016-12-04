@@ -39,7 +39,7 @@
 
         <div class="form-group">
             <label data-translate="jhipsterApp.inscricao.aluno" for="field_aluno">Aluno</label>
-            <select class="form-control" id="field_aluno" name="aluno" ng-model="alunos_names" ng-options="aluno for aluno in alunos_names"required>
+            <select class="form-control" id="field_aluno" name="aluno" ng-model="vm.inscricao.aluno" ng-options="aluno as aluno.nome for aluno in vm.alunos"required>
                 <option></option>
             </select>
             <!--<input type="text" class="form-control" id="field_aluno" name="aluno" ng-model="aluno_name" readonly/>-->

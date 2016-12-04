@@ -16,16 +16,27 @@
         vm.openCalendar = openCalendar;
         vm.save = save;        
         vm.disciplinas = Disciplina.query();        
-        vm.alunos = Aluno.query();
 
         Principal.identity().then(r => {                        
-            var authorities = r.authorities;
-            if( authorities.indexOf("ROLE_ALUNO") != -1) {
-                $scope.alunos_names = [r.login];  
-            }            
-            else{                     
-                // ADICIONAR FUNCIONALIDADE QUE MODIFICA alunos_names                                  
-            }
+            var authorities = r.authorities;                        
+            Aluno.query(function(alunos){
+                if( authorities.indexOf("ROLE_ALUNO") != -1) { 
+                    var element = {};
+                    for(var x in alunos){   
+                        if(x != "$promise" && x!= "$resolved"){
+                            if(alunos[x].login == r.login){
+                                element[x] = alunos[x];
+                            }
+                        }                        
+                    }      
+                    element["$promise"] = alunos["$promise"];
+                    element["$resolved"] = alunos["$resolved"];
+                    vm.alunos = element;                              
+                }                    
+                else{
+                    vm.alunos=  alunos;
+                }
+            });               
         });              
 
         $timeout(function (){
