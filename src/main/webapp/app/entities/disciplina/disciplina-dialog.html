@@ -69,9 +69,10 @@
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="jhipsterApp.disciplina.estado" for="field_estado">Estado</label>
-            <input type="text" class="form-control" name="estado" id="field_estado"
-                    ng-model="vm.disciplina.estado" required
-                     />
+            <select class="form-control" id="field_estado" name="estado" ng-model="vm.disciplina.estado" required>
+                <option value="Ativa">Ativa</option>
+                <option value="Inativa">Inativa</option>
+            </select>
             <p ng-show="editForm.estado.$invalid && !editForm.estado.$pristine" class="help-block">O campo estado é necessário.</p>
         </div>
     </div>
