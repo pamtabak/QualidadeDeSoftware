@@ -19,7 +19,11 @@
       } else {
         Inscricao.query(function(result) {
           vm.inscricaos = result.filter(function(element) {
-            return element.disciplina.professor.login === r.login;
+            console.log(element);
+            if (element.estado === "trancado") {return false;}
+            if (element.disciplina.professor.login !== r.login) {return false;}
+            if (element.disciplina.estado === "Inativa") {return false;}
+            return true;
           });
         });
       }
